@@ -8,22 +8,42 @@
 
 /* Begin PBXBuildFile section */
 		1F6DF5031DB0C613006C885E /* MSJBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6DF5021DB0C613006C885E /* MSJBaseViewController.swift */; };
-		1F6DF5051DB0C6B0006C885E /* MSJRecommendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6DF5041DB0C6B0006C885E /* MSJRecommendViewController.swift */; };
 		1F7290CE1DB0BFDE00EF2E8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7290CD1DB0BFDE00EF2E8E /* AppDelegate.swift */; };
 		1F7290D31DB0BFDE00EF2E8E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F7290D11DB0BFDE00EF2E8E /* Main.storyboard */; };
 		1F7290D51DB0BFDE00EF2E8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F7290D41DB0BFDE00EF2E8E /* Assets.xcassets */; };
 		1F7290D81DB0BFDE00EF2E8E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F7290D61DB0BFDE00EF2E8E /* LaunchScreen.storyboard */; };
+		1F81610E1DB22BA900275B19 /* MSJRecommendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F81610D1DB22BA900275B19 /* MSJRecommendViewController.swift */; };
+		1F8161101DB22C1100275B19 /* MSJRecommendFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F81610F1DB22C1100275B19 /* MSJRecommendFlowLayout.swift */; };
+		1F8161181DB2617600275B19 /* MSJRecommendTopReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8161171DB2617600275B19 /* MSJRecommendTopReusableView.swift */; };
+		1F81611A1DB2618E00275B19 /* MSJRecommendCommonReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8161191DB2618E00275B19 /* MSJRecommendCommonReusableView.swift */; };
+		1F81611C1DB264D200275B19 /* MSJRecommendTopReusableLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F81611B1DB264D200275B19 /* MSJRecommendTopReusableLayout.swift */; };
+		1F81612D1DB27FF500275B19 /* MSJRecommendTopCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F81612B1DB27FF500275B19 /* MSJRecommendTopCell.xib */; };
+		1F8161331DB2809700275B19 /* MSJRecommendTopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8161321DB2809700275B19 /* MSJRecommendTopCell.swift */; };
+		1F8161351DB2813700275B19 /* MSJRecommendTopList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8161341DB2813700275B19 /* MSJRecommendTopList.swift */; };
+		1F8161381DB2815200275B19 /* MSJRecommendTopListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8161361DB2815200275B19 /* MSJRecommendTopListCell.swift */; };
+		1F8161391DB2815200275B19 /* MSJRecommendTopListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F8161371DB2815200275B19 /* MSJRecommendTopListCell.xib */; };
+		1F81613F1DB289AD00275B19 /* UIColor+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F81613E1DB289AD00275B19 /* UIColor+Extention.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1F6DF5021DB0C613006C885E /* MSJBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSJBaseViewController.swift; sourceTree = "<group>"; };
-		1F6DF5041DB0C6B0006C885E /* MSJRecommendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSJRecommendViewController.swift; sourceTree = "<group>"; };
 		1F7290CA1DB0BFDE00EF2E8E /* MySwiftApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MySwiftApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F7290CD1DB0BFDE00EF2E8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
 		1F7290D21DB0BFDE00EF2E8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1F7290D41DB0BFDE00EF2E8E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
 		1F7290D71DB0BFDE00EF2E8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1F7290D91DB0BFDE00EF2E8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
+		1F81610D1DB22BA900275B19 /* MSJRecommendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSJRecommendViewController.swift; sourceTree = "<group>"; };
+		1F81610F1DB22C1100275B19 /* MSJRecommendFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSJRecommendFlowLayout.swift; sourceTree = "<group>"; };
+		1F8161171DB2617600275B19 /* MSJRecommendTopReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSJRecommendTopReusableView.swift; sourceTree = "<group>"; };
+		1F8161191DB2618E00275B19 /* MSJRecommendCommonReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSJRecommendCommonReusableView.swift; sourceTree = "<group>"; };
+		1F81611B1DB264D200275B19 /* MSJRecommendTopReusableLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSJRecommendTopReusableLayout.swift; sourceTree = "<group>"; };
+		1F81612B1DB27FF500275B19 /* MSJRecommendTopCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MSJRecommendTopCell.xib; sourceTree = "<group>"; };
+		1F8161321DB2809700275B19 /* MSJRecommendTopCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSJRecommendTopCell.swift; sourceTree = "<group>"; };
+		1F8161341DB2813700275B19 /* MSJRecommendTopList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSJRecommendTopList.swift; sourceTree = "<group>"; };
+		1F8161361DB2815200275B19 /* MSJRecommendTopListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSJRecommendTopListCell.swift; sourceTree = "<group>"; };
+		1F8161371DB2815200275B19 /* MSJRecommendTopListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MSJRecommendTopListCell.xib; sourceTree = "<group>"; };
+		1F81613E1DB289AD00275B19 /* UIColor+Extention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extention.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +79,7 @@
 		1F6DF5011DB0C5C0006C885E /* Function */ = {
 			isa = PBXGroup;
 			children = (
-				1F6DF5041DB0C6B0006C885E /* MSJRecommendViewController.swift */,
+				1F81610C1DB22B7C00275B19 /* Recommend */,
 			);
 			path = Function;
 			sourceTree = "<group>";
@@ -67,6 +87,7 @@
 		1F7290C11DB0BFDE00EF2E8E = {
 			isa = PBXGroup;
 			children = (
+				1F81612B1DB27FF500275B19 /* MSJRecommendTopCell.xib */,
 				1F7290CC1DB0BFDE00EF2E8E /* MySwiftApp */,
 				1F7290CB1DB0BFDE00EF2E8E /* Products */,
 			);
@@ -85,10 +106,35 @@
 			children = (
 				1F7290D11DB0BFDE00EF2E8E /* Main.storyboard */,
 				1F6DF5011DB0C5C0006C885E /* Function */,
+				1F8161211DB2690800275B19 /* Extention */,
 				1F6DF5001DB0C59F006C885E /* Base */,
 				1F6DF4FF1DB0C544006C885E /* Other */,
 			);
 			path = MySwiftApp;
+			sourceTree = "<group>";
+		};
+		1F81610C1DB22B7C00275B19 /* Recommend */ = {
+			isa = PBXGroup;
+			children = (
+				1F81610D1DB22BA900275B19 /* MSJRecommendViewController.swift */,
+				1F81610F1DB22C1100275B19 /* MSJRecommendFlowLayout.swift */,
+				1F8161171DB2617600275B19 /* MSJRecommendTopReusableView.swift */,
+				1F81611B1DB264D200275B19 /* MSJRecommendTopReusableLayout.swift */,
+				1F8161321DB2809700275B19 /* MSJRecommendTopCell.swift */,
+				1F8161341DB2813700275B19 /* MSJRecommendTopList.swift */,
+				1F8161361DB2815200275B19 /* MSJRecommendTopListCell.swift */,
+				1F8161371DB2815200275B19 /* MSJRecommendTopListCell.xib */,
+				1F8161191DB2618E00275B19 /* MSJRecommendCommonReusableView.swift */,
+			);
+			path = Recommend;
+			sourceTree = "<group>";
+		};
+		1F8161211DB2690800275B19 /* Extention */ = {
+			isa = PBXGroup;
+			children = (
+				1F81613E1DB289AD00275B19 /* UIColor+Extention.swift */,
+			);
+			path = Extention;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -123,6 +169,7 @@
 				TargetAttributes = {
 					1F7290C91DB0BFDE00EF2E8E = {
 						CreatedOnToolsVersion = 8.0;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -151,8 +198,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F7290D81DB0BFDE00EF2E8E /* LaunchScreen.storyboard in Resources */,
+				1F8161391DB2815200275B19 /* MSJRecommendTopListCell.xib in Resources */,
 				1F7290D51DB0BFDE00EF2E8E /* Assets.xcassets in Resources */,
 				1F7290D31DB0BFDE00EF2E8E /* Main.storyboard in Resources */,
+				1F81612D1DB27FF500275B19 /* MSJRecommendTopCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,9 +212,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F6DF5051DB0C6B0006C885E /* MSJRecommendViewController.swift in Sources */,
+				1F81611A1DB2618E00275B19 /* MSJRecommendCommonReusableView.swift in Sources */,
+				1F8161351DB2813700275B19 /* MSJRecommendTopList.swift in Sources */,
+				1F81610E1DB22BA900275B19 /* MSJRecommendViewController.swift in Sources */,
+				1F8161181DB2617600275B19 /* MSJRecommendTopReusableView.swift in Sources */,
+				1F8161331DB2809700275B19 /* MSJRecommendTopCell.swift in Sources */,
+				1F8161101DB22C1100275B19 /* MSJRecommendFlowLayout.swift in Sources */,
 				1F6DF5031DB0C613006C885E /* MSJBaseViewController.swift in Sources */,
 				1F7290CE1DB0BFDE00EF2E8E /* AppDelegate.swift in Sources */,
+				1F81613F1DB289AD00275B19 /* UIColor+Extention.swift in Sources */,
+				1F81611C1DB264D200275B19 /* MSJRecommendTopReusableLayout.swift in Sources */,
+				1F8161381DB2815200275B19 /* MSJRecommendTopListCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
