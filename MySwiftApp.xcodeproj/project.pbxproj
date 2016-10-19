@@ -17,12 +17,12 @@
 		1F8161181DB2617600275B19 /* MSJRecommendTopReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8161171DB2617600275B19 /* MSJRecommendTopReusableView.swift */; };
 		1F81611A1DB2618E00275B19 /* MSJRecommendCommonReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8161191DB2618E00275B19 /* MSJRecommendCommonReusableView.swift */; };
 		1F81611C1DB264D200275B19 /* MSJRecommendTopReusableLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F81611B1DB264D200275B19 /* MSJRecommendTopReusableLayout.swift */; };
-		1F81612D1DB27FF500275B19 /* MSJRecommendTopCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F81612B1DB27FF500275B19 /* MSJRecommendTopCell.xib */; };
 		1F8161331DB2809700275B19 /* MSJRecommendTopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8161321DB2809700275B19 /* MSJRecommendTopCell.swift */; };
 		1F8161351DB2813700275B19 /* MSJRecommendTopList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8161341DB2813700275B19 /* MSJRecommendTopList.swift */; };
 		1F8161381DB2815200275B19 /* MSJRecommendTopListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8161361DB2815200275B19 /* MSJRecommendTopListCell.swift */; };
 		1F8161391DB2815200275B19 /* MSJRecommendTopListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F8161371DB2815200275B19 /* MSJRecommendTopListCell.xib */; };
 		1F81613F1DB289AD00275B19 /* UIColor+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F81613E1DB289AD00275B19 /* UIColor+Extention.swift */; };
+		F1F5EF5336F2641EC9C182E0 /* Pods_MySwiftApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 641353B39579F5A3BE066CAF /* Pods_MySwiftApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,12 +38,14 @@
 		1F8161171DB2617600275B19 /* MSJRecommendTopReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSJRecommendTopReusableView.swift; sourceTree = "<group>"; };
 		1F8161191DB2618E00275B19 /* MSJRecommendCommonReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSJRecommendCommonReusableView.swift; sourceTree = "<group>"; };
 		1F81611B1DB264D200275B19 /* MSJRecommendTopReusableLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSJRecommendTopReusableLayout.swift; sourceTree = "<group>"; };
-		1F81612B1DB27FF500275B19 /* MSJRecommendTopCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MSJRecommendTopCell.xib; sourceTree = "<group>"; };
 		1F8161321DB2809700275B19 /* MSJRecommendTopCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSJRecommendTopCell.swift; sourceTree = "<group>"; };
 		1F8161341DB2813700275B19 /* MSJRecommendTopList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSJRecommendTopList.swift; sourceTree = "<group>"; };
 		1F8161361DB2815200275B19 /* MSJRecommendTopListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSJRecommendTopListCell.swift; sourceTree = "<group>"; };
 		1F8161371DB2815200275B19 /* MSJRecommendTopListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MSJRecommendTopListCell.xib; sourceTree = "<group>"; };
 		1F81613E1DB289AD00275B19 /* UIColor+Extention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extention.swift"; sourceTree = "<group>"; };
+		4AE2F3C11080BA689AA760C6 /* Pods-MySwiftApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySwiftApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-MySwiftApp/Pods-MySwiftApp.release.xcconfig"; sourceTree = "<group>"; };
+		641353B39579F5A3BE066CAF /* Pods_MySwiftApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MySwiftApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD00FC7B896548CA61AC1021 /* Pods-MySwiftApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySwiftApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MySwiftApp/Pods-MySwiftApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1F5EF5336F2641EC9C182E0 /* Pods_MySwiftApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,9 +90,10 @@
 		1F7290C11DB0BFDE00EF2E8E = {
 			isa = PBXGroup;
 			children = (
-				1F81612B1DB27FF500275B19 /* MSJRecommendTopCell.xib */,
 				1F7290CC1DB0BFDE00EF2E8E /* MySwiftApp */,
 				1F7290CB1DB0BFDE00EF2E8E /* Products */,
+				673D3100D348438150B5B01D /* Pods */,
+				6503440B761C0850A6C163B9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -137,6 +141,23 @@
 			path = Extention;
 			sourceTree = "<group>";
 		};
+		6503440B761C0850A6C163B9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				641353B39579F5A3BE066CAF /* Pods_MySwiftApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		673D3100D348438150B5B01D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FD00FC7B896548CA61AC1021 /* Pods-MySwiftApp.debug.xcconfig */,
+				4AE2F3C11080BA689AA760C6 /* Pods-MySwiftApp.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -144,9 +165,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1F7290DC1DB0BFDE00EF2E8E /* Build configuration list for PBXNativeTarget "MySwiftApp" */;
 			buildPhases = (
+				385FDED5D94538E387BF78D6 /* [CP] Check Pods Manifest.lock */,
 				1F7290C61DB0BFDE00EF2E8E /* Sources */,
 				1F7290C71DB0BFDE00EF2E8E /* Frameworks */,
 				1F7290C81DB0BFDE00EF2E8E /* Resources */,
+				5210FE6DCFAC97B448E79EF4 /* [CP] Embed Pods Frameworks */,
+				29909E65735EBE34A8CB7FCC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -201,11 +225,58 @@
 				1F8161391DB2815200275B19 /* MSJRecommendTopListCell.xib in Resources */,
 				1F7290D51DB0BFDE00EF2E8E /* Assets.xcassets in Resources */,
 				1F7290D31DB0BFDE00EF2E8E /* Main.storyboard in Resources */,
-				1F81612D1DB27FF500275B19 /* MSJRecommendTopCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		29909E65735EBE34A8CB7FCC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MySwiftApp/Pods-MySwiftApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		385FDED5D94538E387BF78D6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5210FE6DCFAC97B448E79EF4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MySwiftApp/Pods-MySwiftApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1F7290C61DB0BFDE00EF2E8E /* Sources */ = {
@@ -342,6 +413,7 @@
 		};
 		1F7290DD1DB0BFDE00EF2E8E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FD00FC7B896548CA61AC1021 /* Pods-MySwiftApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MySwiftApp/Info.plist;
@@ -354,6 +426,7 @@
 		};
 		1F7290DE1DB0BFDE00EF2E8E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4AE2F3C11080BA689AA760C6 /* Pods-MySwiftApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MySwiftApp/Info.plist;
