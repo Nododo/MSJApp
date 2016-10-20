@@ -4,7 +4,7 @@
 //
 //  Created by 杜维欣 on 16/10/15.
 //  Copyright © 2016年 Nododo. All rights reserved.
-//
+// thanks to https://github.com/chiahsien/CHTCollectionViewWaterfallLayout i transfer it from swift 2 to swift 3.0
 
 import UIKit
 
@@ -94,7 +94,7 @@ class MSJRecommendFlowLayout: UICollectionViewLayout {
         self.footerHeight = 0.0
         self.columnCount = 2
         self.minimumInteritemSpacing = 10
-        self.minimumColumnSpacing = 10
+        self.minimumColumnSpacing = 0
         self.sectionInset = UIEdgeInsets.zero
         self.itemRenderDirection =
             MSJRecommendFlowLayoutItemRenderDirection.MSJRecommendFlowLayoutItemRenderDirectionShortestFirst
@@ -114,7 +114,7 @@ class MSJRecommendFlowLayout: UICollectionViewLayout {
         self.footerHeight = 0.0
         self.columnCount = 2
         self.minimumInteritemSpacing = 10
-        self.minimumColumnSpacing = 10
+        self.minimumColumnSpacing = 0
         self.sectionInset = UIEdgeInsets.zero
         self.itemRenderDirection =
             MSJRecommendFlowLayoutItemRenderDirection.MSJRecommendFlowLayoutItemRenderDirectionShortestFirst
@@ -238,6 +238,7 @@ class MSJRecommendFlowLayout: UICollectionViewLayout {
                 
                 let columnIndex = self.nextColumnIndexForItem(item: idx, section: section)
                 let xOffset = sectionInsets.left + (itemWidth + self.minimumColumnSpacing) * CGFloat(columnIndex)
+                //MARK: 此处改动
                 let yOffset = ((self.columnHeights[section] as AnyObject).object(at: columnIndex) as AnyObject).doubleValue
                 let itemSize = self.delegate?.collectionView(collectionView: self.collectionView!, layout: self, sizeForItemAtIndexPath: NSIndexPath(item: idx, section: section))
                 var itemHeight: CGFloat = 0.0
@@ -255,8 +256,115 @@ class MSJRecommendFlowLayout: UICollectionViewLayout {
                 }
             }
             self.sectionItemAttributes.add(itemAttributes)
-
+            
+            /*
+             * 4. Section footer
+             */
+            var footerHeight : CGFloat = 0.0
+            let columnIndex  = self.longestColumnIndexInSection(section: section)
+            top = CGFloat(((self.columnHeights[section] as AnyObject).object(at: columnIndex) as AnyObject).floatValue) - minimumInteritemSpacing + sectionInsets.bottom
+            
+            if let height = self.delegate?.collectionView?(collectionView: self.collectionView!, layout: self, heightForFooterInSection: section){
+                footerHeight = height
+            }else{
+                footerHeight = self.footerHeight
+            }
+            if footerHeight > 0 {
+                attributes = UICollectionViewLayoutAttributes(forSupplementaryViewOfKind: MSJRecommendCollectionElementKindSectionFooter, with: IndexPath(item: 0, section: section))
+                attributes.frame = CGRect(x: 0, y: top, width: self.collectionView!.bounds.width, height: footerHeight)
+                self.footersAttributes.setObject(attributes, forKey: section as NSCopying)
+                self.allItemAttributes.add(attributes)
+                top = attributes.frame.maxY
+            }
+            
+            for idx in 0 ..< columnCount {
+                if let sectionColumnHeights = self.columnHeights[section] as? NSMutableArray {
+                    sectionColumnHeights[idx]=top
+                }
+            }
         }
+        
+        var idx = 0
+        let itemCounts = self.allItemAttributes.count
+        while(idx < itemCounts){
+            let rect1 = (self.allItemAttributes.object(at: idx) as AnyObject).frame as CGRect
+            idx = min(idx + unionSize, itemCounts) - 1
+            let rect2 = (self.allItemAttributes.object(at: idx) as AnyObject).frame as CGRect
+            self.unionRects.add(NSValue(cgRect:rect1.union(rect2)))
+            idx += 1
+        }
+    }
+    
+    override public var collectionViewContentSize: CGSize {
+        let numberOfSections = self.collectionView!.numberOfSections
+        if numberOfSections == 0{
+            return CGSize.zero
+        }
+        
+        var contentSize = self.collectionView!.bounds.size as CGSize
+        let height = (self.columnHeights.lastObject! as AnyObject).firstObject as! NSNumber
+        contentSize.height = CGFloat(height.doubleValue)
+        return contentSize
+    }
+    
+    override public func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
+        if indexPath.section >= self.sectionItemAttributes.count {
+            return nil
+        }
+        let list = self.sectionItemAttributes.object(at: indexPath.section) as! NSArray
+        
+        if indexPath.item >= list.count {
+            return nil;
+        }
+        return list.object(at: indexPath.item) as? UICollectionViewLayoutAttributes
+    }
+
+    override public func layoutAttributesForSupplementaryView(ofKind elementKind: String, at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
+        var attribute = UICollectionViewLayoutAttributes()
+        if elementKind == MSJRecommendCollectionElementKindSectionHeader{
+            attribute = self.headersAttributes.object(forKey: indexPath.section) as! UICollectionViewLayoutAttributes
+        }else if elementKind == MSJRecommendCollectionElementKindSectionFooter{
+            attribute = self.footersAttributes.object(forKey: indexPath.section) as! UICollectionViewLayoutAttributes
+        }
+        return attribute
+    }
+
+    override public func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
+        var begin = 0, end = self.unionRects.count
+        let attrs = NSMutableArray()
+        
+        for i in 0 ..< end {
+            if let unionRect = self.unionRects.object(at: i) as? NSValue {
+                if rect.intersects(unionRect.cgRectValue) {
+                    begin = i * unionSize;
+                    break
+                }
+            }
+        }
+        for i in (0 ..< self.unionRects.count).reversed() {
+            if let unionRect = self.unionRects.object(at: i) as? NSValue {
+                if rect.intersects(unionRect.cgRectValue){
+                    end = min((i+1)*unionSize,self.allItemAttributes.count)
+                    break
+                }
+            }
+        }
+        for i in begin ..< end {
+            let attr = self.allItemAttributes.object(at: i) as! UICollectionViewLayoutAttributes
+            if rect.intersects(attr.frame) {
+                attrs.add(attr)
+            }
+        }
+        
+        return NSArray(array: attrs) as? [UICollectionViewLayoutAttributes]
+    }
+
+    override public func shouldInvalidateLayout (forBoundsChange newBounds : CGRect) -> Bool {
+        let oldBounds = self.collectionView!.bounds
+        if newBounds.width != oldBounds.width{
+            return true
+        }
+        return false
     }
     
     /**
@@ -267,17 +375,53 @@ class MSJRecommendFlowLayout: UICollectionViewLayout {
     func shortestColumnIndexInSection (section: NSInteger) -> NSInteger {
         var index = 0
         var shorestHeight = MAXFLOAT
-        
-        self.columnHeights[section].enumerateObjectsUsingBlock({(object : AnyObject!, idx : NSInteger,pointer :UnsafeMutablePointer<ObjCBool>) in
-            let height = object.floatValue
-            if (height<shorestHeight){
-                shorestHeight = height
+        let array = self.columnHeights[section] as! NSMutableArray
+        array.enumerateObjects ({ (object, idx, pointer) in
+            let height = (object as AnyObject).floatValue
+            if (height!<shorestHeight){
+                shorestHeight = height!
                 index = idx
             }
         })
+//        self.columnHeights[section].enumerateObjectsUsingBlock({(object : AnyObject!, idx : NSInteger,pointer :UnsafeMutablePointer<ObjCBool>) in
+//            let height = object.floatValue
+//            if (height<shorestHeight){
+//                shorestHeight = height
+//                index = idx
+//            }
+//        })
         return index
     }
     
+    
+    /**
+     *  Find the longest column.
+     *
+     *  @return index for the longest column
+     */
+    
+    func longestColumnIndexInSection (section: NSInteger) -> NSInteger {
+        var index = 0
+        var longestHeight:Float = 0.0
+        let array = self.columnHeights[section] as! NSMutableArray
+        array.enumerateObjects ({ (object, idx, pointer) in
+            let height = (object as AnyObject).floatValue
+            if (height! > longestHeight){
+                longestHeight = height!
+                index = idx
+            }
+        })
+//        self.columnHeights[section].enumerateObjectsUsingBlock({(object : AnyObject!, idx : NSInteger,pointer :UnsafeMutablePointer<ObjCBool>) in
+//            let height = CGFloat(object.floatValue)
+//            if (height > longestHeight){
+//                longestHeight = height
+//                index = idx
+//            }
+//        })
+        return index
+    }
+    
+
     /**
      *  Find the index for the next column.
      *
