@@ -214,7 +214,9 @@ class MSJRecommendFlowLayout: UICollectionViewLayout {
             
             if heightHeader > 0 {
                 attributes = UICollectionViewLayoutAttributes(forSupplementaryViewOfKind: MSJRecommendCollectionElementKindSectionHeader, with: IndexPath(item: 0, section: section))
-                self.headersAttributes.setObject(attributes, forKey: section as NSCopying)
+                
+                self.headersAttributes.setObject(attributes, forKey: NSNumber.init(value: section))
+                
                 self.allItemAttributes.add(attributes)
                 
                 top = attributes.frame.maxY
@@ -272,7 +274,7 @@ class MSJRecommendFlowLayout: UICollectionViewLayout {
             if footerHeight > 0 {
                 attributes = UICollectionViewLayoutAttributes(forSupplementaryViewOfKind: MSJRecommendCollectionElementKindSectionFooter, with: IndexPath(item: 0, section: section))
                 attributes.frame = CGRect(x: 0, y: top, width: self.collectionView!.bounds.width, height: footerHeight)
-                self.footersAttributes.setObject(attributes, forKey: section as NSCopying)
+                self.footersAttributes.setObject(attributes, forKey: NSNumber.init(value: section))
                 self.allItemAttributes.add(attributes)
                 top = attributes.frame.maxY
             }
@@ -322,9 +324,9 @@ class MSJRecommendFlowLayout: UICollectionViewLayout {
     override public func layoutAttributesForSupplementaryView(ofKind elementKind: String, at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
         var attribute = UICollectionViewLayoutAttributes()
         if elementKind == MSJRecommendCollectionElementKindSectionHeader{
-            attribute = self.headersAttributes.object(forKey: indexPath.section) as! UICollectionViewLayoutAttributes
+            attribute = self.headersAttributes.object(forKey: NSNumber.init(value: indexPath.section)) as! UICollectionViewLayoutAttributes
         }else if elementKind == MSJRecommendCollectionElementKindSectionFooter{
-            attribute = self.footersAttributes.object(forKey: indexPath.section) as! UICollectionViewLayoutAttributes
+            attribute = self.footersAttributes.object(forKey: NSNumber.init(value: indexPath.section)) as! UICollectionViewLayoutAttributes
         }
         return attribute
     }
