@@ -8,14 +8,25 @@
 
 import UIKit
 
+public let screenW = UIScreen.main.bounds.width
+public let screenH = UIScreen.main.bounds.height
+
 class MSJRecommendTopReusableLayout: UICollectionViewFlowLayout {
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        self.itemSize = CGSize(width: 10, height: 20);
-    }
+
     //storyboard 中要实现下面方法
     override init() {
         super.init()
-        self.itemSize = CGSize(width: 10, height: 20);
+        self.scrollDirection = .horizontal
+    }
+    
+    override func prepare() {
+        super.prepare()
+        self.itemSize = CGSize(width: screenW - 10, height: self.collectionView!.bounds.height)
+        self.sectionInset = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
+
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }
