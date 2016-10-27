@@ -12,7 +12,7 @@ class MSJRecommendTopReusableView: UICollectionReusableView, UICollectionViewDel
     override init(frame: CGRect) {
         super.init(frame: frame)
         let topLayout = MSJRecommendTopReusableLayout()
-        let collectionView = UICollectionView(frame: frame, collectionViewLayout: topLayout)
+        let collectionView = UICollectionView(frame: CGRect(x:0, y:0, width: frame.width, height: frame.height - topPageControlH), collectionViewLayout: topLayout)
         collectionView.backgroundColor = UIColor.white
         collectionView.delegate = self
         collectionView.dataSource = self

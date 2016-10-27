@@ -21,6 +21,10 @@ class MSJRecommendTopList: UITableView, UITableViewDelegate, UITableViewDataSour
         cell.backgroundColor = UIColor.randomColor()
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return (sntViewH - topPageControlH) / 3
+    }
 
     override init(frame: CGRect, style: UITableViewStyle) {
         super.init(frame: frame, style: style)

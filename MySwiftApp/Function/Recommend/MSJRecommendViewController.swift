@@ -20,7 +20,6 @@ class MSJRecommendViewController: MSJBaseViewController, CHTCollectionViewDelega
         super.viewDidLoad()
         mainView.delegate = self;
         mainView.dataSource = self;
-        
         let layout = CHTCollectionViewWaterfallLayout()
         mainView.collectionViewLayout = layout
         
@@ -40,7 +39,7 @@ class MSJRecommendViewController: MSJBaseViewController, CHTCollectionViewDelega
     
      func collectionView (_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
                           heightForHeaderInSection section: NSInteger) -> CGFloat {
-        return 200
+        return sntViewH
     }
     
     func collectionView (_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
@@ -77,7 +76,7 @@ class MSJRecommendViewController: MSJBaseViewController, CHTCollectionViewDelega
     public func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         if kind == CHTCollectionElementKindSectionHeader {
             let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: testHeaderIdentifier, for: indexPath);
-            header.backgroundColor = UIColor.randomColor()
+            header.backgroundColor = UIColor.white
             return header
         }
         return UICollectionReusableView()
