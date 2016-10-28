@@ -13,7 +13,7 @@ public let screenH = UIScreen.main.bounds.height
 public let navigationBarH: CGFloat = 64
 public let tabbarH: CGFloat = 44
 public let sntViewH = screenH - navigationBarH - tabbarH
-public let topPageControlH: CGFloat = 44
+public let topLabelH: CGFloat = 44
 
 class MSJRecommendTopReusableLayout: UICollectionViewFlowLayout {
 

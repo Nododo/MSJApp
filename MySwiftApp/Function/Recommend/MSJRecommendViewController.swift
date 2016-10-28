@@ -39,7 +39,7 @@ class MSJRecommendViewController: MSJBaseViewController, CHTCollectionViewDelega
     
      func collectionView (_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
                           heightForHeaderInSection section: NSInteger) -> CGFloat {
-        return sntViewH
+        return sntViewH + 30
     }
     
     func collectionView (_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,

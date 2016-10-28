@@ -23,7 +23,7 @@ class MSJRecommendTopList: UITableView, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return (sntViewH - topPageControlH) / 3
+        return (sntViewH - topLabelH * 2) / 3
     }
 
     override init(frame: CGRect, style: UITableViewStyle) {
