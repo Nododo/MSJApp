@@ -45,7 +45,7 @@ class MSJRecommendTopReusableView: UICollectionReusableView, UICollectionViewDel
         super.layoutSubviews()
         collectionView.snp.makeConstraints { (make) in
             make.left.right.top.equalTo(0)
-            make.bottom.equalTo(-30)
+            make.bottom.equalTo(-40)
         }
         
         pageControl.snp.makeConstraints { (make) in
@@ -56,7 +56,7 @@ class MSJRecommendTopReusableView: UICollectionReusableView, UICollectionViewDel
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-       let currentIndex = Int(collectionView.contentOffset.x / collectionView.frame.width)
+        let currentIndex = Int(collectionView.contentOffset.x / collectionView.frame.width)
         pageControl.currentPage = currentIndex
     }
     
@@ -65,6 +65,19 @@ class MSJRecommendTopReusableView: UICollectionReusableView, UICollectionViewDel
     }
     
     override func draw(_ rect: CGRect) {
-        
+        let leftTopPoint = CGPoint(x: 0, y: 0)
+        let leftBottomPoint = CGPoint(x: 0, y: rect.height - 23)
+        let rightTopPoint = CGPoint(x: rect.width, y: 0)
+        let rightBottomPoint = CGPoint(x: rect.width, y: rect.height - 23)
+        let controlPoint = CGPoint(x: rect.width / 2, y: rect.height)
+        let ctx = UIGraphicsGetCurrentContext()!
+        ctx.beginPath()
+        ctx.move(to: leftTopPoint)
+        ctx.addLine(to: leftBottomPoint)
+        ctx.addQuadCurve(to: rightBottomPoint, control: controlPoint)
+        ctx.addLine(to: rightTopPoint)
+        ctx.setFillColor(UIColor.brown.cgColor)
+        ctx.fillPath()
+        ctx.closePath()
     }
 }

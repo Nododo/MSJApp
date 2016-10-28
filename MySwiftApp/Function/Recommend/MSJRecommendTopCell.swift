@@ -34,7 +34,7 @@ class MSJRecommendTopCell: UICollectionViewCell {
         super.layoutSubviews()
         topList.snp.makeConstraints { (make) in
             make.left.right.top.equalTo(0)
-            make.bottom.equalTo(-topLabelH * 2)
+            make.bottom.equalTo(-topLabelH * 3 / 2)
         }
         
         titleLabel.snp.makeConstraints { (make) in
@@ -46,7 +46,7 @@ class MSJRecommendTopCell: UICollectionViewCell {
         subTitleLabel.snp.makeConstraints { (make) in
             make.left.right.equalTo(0)
             make.top.equalTo(titleLabel.snp.bottom)
-            make.height.equalTo(topLabelH)
+            make.height.equalTo(topLabelH / 2)
         }
     }
     
