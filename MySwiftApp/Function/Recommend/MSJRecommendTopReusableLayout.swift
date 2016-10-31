@@ -15,6 +15,10 @@ public let tabbarH: CGFloat = 44
 public let sntViewH = screenH - navigationBarH - tabbarH
 public let topLabelH: CGFloat = 44
 
+//MARK: COLOR
+public let topColor = UIColor(red: 247 / 255.0, green: 247 / 255.0, blue: 250 / 255.0, alpha: 1)
+public let topTextColor = UIColor(red: 168 / 255.0, green: 168 / 255.0, blue: 168 / 255.0, alpha: 1)
+
 class MSJRecommendTopReusableLayout: UICollectionViewFlowLayout {
 
     //storyboard 中要实现下面方法

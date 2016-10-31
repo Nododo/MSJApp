@@ -22,11 +22,19 @@ class MSJRecommendTopCell: UICollectionViewCell {
         contentView.addSubview(topList)
         
         titleLabel = UILabel()
-        titleLabel.backgroundColor = UIColor.randomColor()
+        titleLabel.textAlignment = .center
+        titleLabel.textColor = topTextColor
+        titleLabel.font = UIFont.systemFont(ofSize: 15)
+        titleLabel.text = "下午茶"
+        titleLabel.backgroundColor = topColor
         addSubview(titleLabel)
         
         subTitleLabel = UILabel()
-        subTitleLabel.backgroundColor = UIColor.randomColor()
+        subTitleLabel.textAlignment = .center
+        subTitleLabel.textColor = topTextColor
+        subTitleLabel.backgroundColor = topColor
+        subTitleLabel.text = "午后让嘴巴飞去南方度个假"
+        subTitleLabel.font = UIFont.systemFont(ofSize: 13)
         addSubview(subTitleLabel)
     }
     

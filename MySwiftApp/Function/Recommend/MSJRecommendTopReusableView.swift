@@ -76,7 +76,7 @@ class MSJRecommendTopReusableView: UICollectionReusableView, UICollectionViewDel
         ctx.addLine(to: leftBottomPoint)
         ctx.addQuadCurve(to: rightBottomPoint, control: controlPoint)
         ctx.addLine(to: rightTopPoint)
-        ctx.setFillColor(UIColor.brown.cgColor)
+        ctx.setFillColor(topColor.cgColor)
         ctx.fillPath()
         ctx.closePath()
     }
