@@ -18,8 +18,8 @@ class MSJRecommendViewController: MSJBaseViewController, CHTCollectionViewDelega
     override func viewDidLoad() {
         //MARK: self.automaticallyAdjustsScrollViewInsets在storyboard中设置为NO
         super.viewDidLoad()
-        mainView.delegate = self;
-        mainView.dataSource = self;
+        mainView.delegate = self
+        mainView.dataSource = self
         let layout = CHTCollectionViewWaterfallLayout()
         mainView.collectionViewLayout = layout
         
