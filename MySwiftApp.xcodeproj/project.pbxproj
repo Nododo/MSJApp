@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F4EB8451DDD60D300A1B329 /* CHTCollectionViewWaterfallLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4EB8441DDD60D300A1B329 /* CHTCollectionViewWaterfallLayout.swift */; };
 		1F6DF5031DB0C613006C885E /* MSJBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6DF5021DB0C613006C885E /* MSJBaseViewController.swift */; };
 		1F7290CE1DB0BFDE00EF2E8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7290CD1DB0BFDE00EF2E8E /* AppDelegate.swift */; };
 		1F7290D31DB0BFDE00EF2E8E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F7290D11DB0BFDE00EF2E8E /* Main.storyboard */; };
@@ -21,11 +22,13 @@
 		1F8161381DB2815200275B19 /* MSJRecommendTopListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8161361DB2815200275B19 /* MSJRecommendTopListCell.swift */; };
 		1F8161391DB2815200275B19 /* MSJRecommendTopListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F8161371DB2815200275B19 /* MSJRecommendTopListCell.xib */; };
 		1F81613F1DB289AD00275B19 /* UIColor+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F81613E1DB289AD00275B19 /* UIColor+Extention.swift */; };
-		1FF21BE51DC046AD002FF371 /* CHTCollectionViewWaterfallLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF21BE41DC046AD002FF371 /* CHTCollectionViewWaterfallLayout.swift */; };
+		1FE442301DE2F47E0034D30A /* MSJRecommendFirstSectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE4422E1DE2F47E0034D30A /* MSJRecommendFirstSectionCell.swift */; };
+		1FE442311DE2F47E0034D30A /* MSJRecommendFirstSectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FE4422F1DE2F47E0034D30A /* MSJRecommendFirstSectionCell.xib */; };
 		F1F5EF5336F2641EC9C182E0 /* Pods_MySwiftApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 641353B39579F5A3BE066CAF /* Pods_MySwiftApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1F4EB8441DDD60D300A1B329 /* CHTCollectionViewWaterfallLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHTCollectionViewWaterfallLayout.swift; sourceTree = "<group>"; };
 		1F6DF5021DB0C613006C885E /* MSJBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSJBaseViewController.swift; sourceTree = "<group>"; };
 		1F7290CA1DB0BFDE00EF2E8E /* MySwiftApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MySwiftApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F7290CD1DB0BFDE00EF2E8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
@@ -42,7 +45,8 @@
 		1F8161361DB2815200275B19 /* MSJRecommendTopListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSJRecommendTopListCell.swift; sourceTree = "<group>"; };
 		1F8161371DB2815200275B19 /* MSJRecommendTopListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MSJRecommendTopListCell.xib; sourceTree = "<group>"; };
 		1F81613E1DB289AD00275B19 /* UIColor+Extention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extention.swift"; sourceTree = "<group>"; };
-		1FF21BE41DC046AD002FF371 /* CHTCollectionViewWaterfallLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHTCollectionViewWaterfallLayout.swift; sourceTree = "<group>"; };
+		1FE4422E1DE2F47E0034D30A /* MSJRecommendFirstSectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSJRecommendFirstSectionCell.swift; sourceTree = "<group>"; };
+		1FE4422F1DE2F47E0034D30A /* MSJRecommendFirstSectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MSJRecommendFirstSectionCell.xib; sourceTree = "<group>"; };
 		4AE2F3C11080BA689AA760C6 /* Pods-MySwiftApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySwiftApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-MySwiftApp/Pods-MySwiftApp.release.xcconfig"; sourceTree = "<group>"; };
 		641353B39579F5A3BE066CAF /* Pods_MySwiftApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MySwiftApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD00FC7B896548CA61AC1021 /* Pods-MySwiftApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySwiftApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MySwiftApp/Pods-MySwiftApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -120,8 +124,8 @@
 		1F81610C1DB22B7C00275B19 /* Recommend */ = {
 			isa = PBXGroup;
 			children = (
+				1F4EB8441DDD60D300A1B329 /* CHTCollectionViewWaterfallLayout.swift */,
 				1F81610D1DB22BA900275B19 /* MSJRecommendViewController.swift */,
-				1FF21BE41DC046AD002FF371 /* CHTCollectionViewWaterfallLayout.swift */,
 				1F8161171DB2617600275B19 /* MSJRecommendTopReusableView.swift */,
 				1F81611B1DB264D200275B19 /* MSJRecommendTopReusableLayout.swift */,
 				1F8161321DB2809700275B19 /* MSJRecommendTopCell.swift */,
@@ -129,6 +133,8 @@
 				1F8161361DB2815200275B19 /* MSJRecommendTopListCell.swift */,
 				1F8161371DB2815200275B19 /* MSJRecommendTopListCell.xib */,
 				1F8161191DB2618E00275B19 /* MSJRecommendCommonReusableView.swift */,
+				1FE4422E1DE2F47E0034D30A /* MSJRecommendFirstSectionCell.swift */,
+				1FE4422F1DE2F47E0034D30A /* MSJRecommendFirstSectionCell.xib */,
 			);
 			path = Recommend;
 			sourceTree = "<group>";
@@ -222,6 +228,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F7290D81DB0BFDE00EF2E8E /* LaunchScreen.storyboard in Resources */,
+				1FE442311DE2F47E0034D30A /* MSJRecommendFirstSectionCell.xib in Resources */,
 				1F8161391DB2815200275B19 /* MSJRecommendTopListCell.xib in Resources */,
 				1F7290D51DB0BFDE00EF2E8E /* Assets.xcassets in Resources */,
 				1F7290D31DB0BFDE00EF2E8E /* Main.storyboard in Resources */,
@@ -258,7 +265,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run \'pod install\' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		5210FE6DCFAC97B448E79EF4 /* [CP] Embed Pods Frameworks */ = {
@@ -284,11 +291,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F81611A1DB2618E00275B19 /* MSJRecommendCommonReusableView.swift in Sources */,
-				1FF21BE51DC046AD002FF371 /* CHTCollectionViewWaterfallLayout.swift in Sources */,
+				1F4EB8451DDD60D300A1B329 /* CHTCollectionViewWaterfallLayout.swift in Sources */,
 				1F8161351DB2813700275B19 /* MSJRecommendTopList.swift in Sources */,
 				1F81610E1DB22BA900275B19 /* MSJRecommendViewController.swift in Sources */,
 				1F8161181DB2617600275B19 /* MSJRecommendTopReusableView.swift in Sources */,
 				1F8161331DB2809700275B19 /* MSJRecommendTopCell.swift in Sources */,
+				1FE442301DE2F47E0034D30A /* MSJRecommendFirstSectionCell.swift in Sources */,
 				1F6DF5031DB0C613006C885E /* MSJBaseViewController.swift in Sources */,
 				1F7290CE1DB0BFDE00EF2E8E /* AppDelegate.swift in Sources */,
 				1F81613F1DB289AD00275B19 /* UIColor+Extention.swift in Sources */,
