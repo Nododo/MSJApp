@@ -10,6 +10,7 @@ import UIKit
 
 let testIdentifier = "testIdentifier"
 let testHeaderIdentifier = "testHeaderIdentifier"
+let MSJRecommendFirstSectionCellIdentifier = "MSJRecommendFirstSectionCellIdentifier"
 
 class MSJRecommendViewController: MSJBaseViewController, CHTCollectionViewDelegateWaterfallLayout, UICollectionViewDataSource {
 
@@ -24,6 +25,8 @@ class MSJRecommendViewController: MSJBaseViewController, CHTCollectionViewDelega
         mainView.collectionViewLayout = layout
         
         mainView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: testIdentifier)
+
+        mainView.register(UINib.init(nibName: "MSJRecommendFirstSectionCell", bundle: nil), forCellWithReuseIdentifier: MSJRecommendFirstSectionCellIdentifier)
         mainView.register(MSJRecommendTopReusableView.self, forSupplementaryViewOfKind: CHTCollectionElementKindSectionHeader, withReuseIdentifier: testHeaderIdentifier)
     }
     
@@ -74,9 +77,17 @@ class MSJRecommendViewController: MSJBaseViewController, CHTCollectionViewDelega
     }
     
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: testIdentifier, for: indexPath)
-        cell.backgroundColor = UIColor.randomColor()
-        return cell
+        switch indexPath.section {
+        case 0:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MSJRecommendFirstSectionCellIdentifier, for: indexPath)
+//            cell.backgroundColor = UIColor.randomColor()
+            return cell
+        default:
+            
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: testIdentifier, for: indexPath)
+            cell.backgroundColor = UIColor.randomColor()
+            return cell
+        }
     }
     
     public func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
