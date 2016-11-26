@@ -37,7 +37,13 @@ class MSJRecommendViewController: MSJBaseViewController, CHTCollectionViewDelega
     
     func collectionView (_ collectionView: UICollectionView,layout collectionViewLayout: UICollectionViewLayout,
                          sizeForItemAtIndexPath indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 100, height: 100)
+        switch indexPath.section {
+        case 0:
+            return CGSize(width: screenW, height: 200)
+        default:
+            return CGSize(width: 100, height: 100)
+        }
+        
     }
     
      func collectionView (_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
@@ -68,12 +74,22 @@ class MSJRecommendViewController: MSJBaseViewController, CHTCollectionViewDelega
     
      func collectionView (_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
                           columnCountForSection section: NSInteger) -> NSInteger {
-        return 2
+        switch section {
+        case 0:
+            return 1
+        default:
+            return 1
+        }
     }
     
     
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        switch section {
+        case 0:
+            return 1
+        default:
+            return 1
+        }
     }
     
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
