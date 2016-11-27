@@ -24,7 +24,7 @@
                             <constraint firstAttribute="height" constant="80" id="1Jf-Ov-w7b"/>
                         </constraints>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cr0-lE-18R">
+                    <button opaque="NO" tag="101" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cr0-lE-18R">
                         <rect key="frame" x="86" y="0.0" width="80" height="80"/>
                         <color key="backgroundColor" red="1" green="0.39254622638454117" blue="0.55412036310397017" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -39,7 +39,7 @@
                             <constraint firstAttribute="height" constant="80" id="tU0-eL-cfT"/>
                         </constraints>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D9z-nR-X0I">
+                    <button opaque="NO" tag="102" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D9z-nR-X0I">
                         <rect key="frame" x="251" y="0.0" width="80" height="80"/>
                         <color key="backgroundColor" red="1" green="0.39254622638454117" blue="0.55412036310397017" alpha="1" colorSpace="calibratedRGB"/>
                         <state key="normal" title="2"/>
@@ -50,7 +50,7 @@
                             <constraint firstAttribute="height" constant="80" id="cBn-o9-0Fa"/>
                         </constraints>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EoT-03-g9Y">
+                    <button opaque="NO" tag="103" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EoT-03-g9Y">
                         <rect key="frame" x="417.5" y="0.0" width="80" height="80"/>
                         <color key="backgroundColor" red="1" green="0.39254622638454117" blue="0.55412036310397017" alpha="1" colorSpace="calibratedRGB"/>
                         <state key="normal" title="3"/>
@@ -61,7 +61,7 @@
                             <constraint firstAttribute="height" constant="80" id="o9M-d2-3XJ"/>
                         </constraints>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TLB-1e-0N6">
+                    <button opaque="NO" tag="104" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TLB-1e-0N6">
                         <rect key="frame" x="583" y="0.0" width="80" height="80"/>
                         <color key="backgroundColor" red="1" green="0.39254622638454117" blue="0.55412036310397017" alpha="1" colorSpace="calibratedRGB"/>
                         <state key="normal" title="4"/>
@@ -72,7 +72,7 @@
                             <constraint firstAttribute="height" constant="80" id="Zb8-Di-H7W"/>
                         </constraints>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7e0-lJ-Ga1">
+                    <button opaque="NO" tag="106" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7e0-lJ-Ga1">
                         <rect key="frame" x="399.5" y="100" width="329.5" height="142"/>
                         <state key="normal" title="image2"/>
                     </button>
@@ -83,7 +83,7 @@
                             <constraint firstAttribute="width" constant="10" id="dEx-Zf-nBU"/>
                         </constraints>
                     </view>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hbd-1Z-fmr">
+                    <button opaque="NO" tag="105" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hbd-1Z-fmr">
                         <rect key="frame" x="20" y="100" width="329.5" height="142"/>
                         <state key="normal" title="image1"/>
                     </button>
@@ -132,6 +132,14 @@
                 <constraint firstItem="dRr-xL-H3y" firstAttribute="width" secondItem="uWO-Pw-612" secondAttribute="width" id="zrw-lw-anU"/>
             </constraints>
             <size key="customSize" width="749" height="262"/>
+            <connections>
+                <outlet property="btn1" destination="cr0-lE-18R" id="7Df-0W-bFv"/>
+                <outlet property="btn2" destination="D9z-nR-X0I" id="esF-A6-a2M"/>
+                <outlet property="btn3" destination="EoT-03-g9Y" id="H1n-lF-fQJ"/>
+                <outlet property="btn4" destination="TLB-1e-0N6" id="wdM-I8-s9h"/>
+                <outlet property="btn5" destination="hbd-1Z-fmr" id="7z8-oj-dOD"/>
+                <outlet property="btn6" destination="7e0-lJ-Ga1" id="79e-wG-rj1"/>
+            </connections>
             <point key="canvasLocation" x="259.5" y="21"/>
         </collectionViewCell>
     </objects>
