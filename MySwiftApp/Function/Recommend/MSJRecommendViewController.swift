@@ -11,6 +11,7 @@ import UIKit
 let testIdentifier = "testIdentifier"
 let testHeaderIdentifier = "testHeaderIdentifier"
 let MSJRecommendFirstSectionCellIdentifier = "MSJRecommendFirstSectionCellIdentifier"
+let MSJRecommendCommonHeaderReusableViewIdentifier = "MSJRecommendCommonHeaderReusableViewIdentifier"
 
 class MSJRecommendViewController: MSJBaseViewController, CHTCollectionViewDelegateWaterfallLayout, UICollectionViewDataSource {
 
@@ -28,11 +29,16 @@ class MSJRecommendViewController: MSJBaseViewController, CHTCollectionViewDelega
 
         mainView.register(UINib.init(nibName: "MSJRecommendFirstSectionCell", bundle: nil), forCellWithReuseIdentifier: MSJRecommendFirstSectionCellIdentifier)
         mainView.register(MSJRecommendTopReusableView.self, forSupplementaryViewOfKind: CHTCollectionElementKindSectionHeader, withReuseIdentifier: testHeaderIdentifier)
+        mainView.register(UINib.init(nibName: "MSJRecommendCommonHeaderReusableView", bundle: nil), forSupplementaryViewOfKind: CHTCollectionElementKindSectionHeader, withReuseIdentifier: MSJRecommendCommonHeaderReusableViewIdentifier)
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 2
     }
     
     func collectionView (_ collectionView: UICollectionView,layout collectionViewLayout: UICollectionViewLayout,
@@ -51,6 +57,8 @@ class MSJRecommendViewController: MSJBaseViewController, CHTCollectionViewDelega
         switch section {
         case 0:
             return sntViewH + 40
+        case 1:
+            return 40
         default:
             return 0
         }
@@ -108,9 +116,18 @@ class MSJRecommendViewController: MSJBaseViewController, CHTCollectionViewDelega
     
     public func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         if kind == CHTCollectionElementKindSectionHeader {
-            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: testHeaderIdentifier, for: indexPath);
-            header.backgroundColor = UIColor.white
-            return header
+            switch indexPath.section {
+            case 0:
+                let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: testHeaderIdentifier, for: indexPath);
+                header.backgroundColor = UIColor.white
+                return header
+            case 1:
+                let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: MSJRecommendCommonHeaderReusableViewIdentifier, for: indexPath);
+                header.backgroundColor = UIColor.randomColor()
+                return header
+            default:
+                 return UICollectionReusableView()
+            }
         }
         return UICollectionReusableView()
     }
