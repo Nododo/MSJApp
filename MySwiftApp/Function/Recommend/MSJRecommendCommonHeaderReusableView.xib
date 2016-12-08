@@ -15,18 +15,19 @@
             <rect key="frame" x="0.0" y="0.0" width="434" height="183"/>
             <autoresizingMask key="autoresizingMask"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jd7-pW-zdT">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="最热商品" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jd7-pW-zdT">
                     <rect key="frame" x="207" y="76.5" width="60" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="pKd-5o-n5X"/>
                         <constraint firstAttribute="width" constant="60" id="w1w-fo-ojz"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bUq-s7-MJQ">
                     <rect key="frame" x="142" y="66.5" width="50" height="50"/>
+                    <color key="backgroundColor" red="1" green="0.11895032789460624" blue="0.020822634525861639" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="50" id="0Ln-2d-HDy"/>
                         <constraint firstAttribute="height" constant="50" id="J9n-ab-xmO"/>
@@ -38,7 +39,7 @@
                         <constraint firstAttribute="width" constant="60" id="9fj-WC-E0W"/>
                         <constraint firstAttribute="height" constant="30" id="cqH-fv-zeI"/>
                     </constraints>
-                    <state key="normal" title="Button"/>
+                    <state key="normal" title="..."/>
                 </button>
             </subviews>
             <constraints>

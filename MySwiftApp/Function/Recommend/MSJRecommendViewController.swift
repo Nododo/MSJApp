@@ -123,7 +123,6 @@ class MSJRecommendViewController: MSJBaseViewController, CHTCollectionViewDelega
                 return header
             case 1:
                 let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: MSJRecommendCommonHeaderReusableViewIdentifier, for: indexPath);
-                header.backgroundColor = UIColor.randomColor()
                 return header
             default:
                  return UICollectionReusableView()

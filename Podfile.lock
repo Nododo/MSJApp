@@ -2,17 +2,20 @@ PODS:
   - Alamofire (4.0.1)
   - Kingfisher (3.1.3)
   - SnapKit (3.0.2)
+  - SwiftyTimer (2.0.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.0)
   - Kingfisher (~> 3.0)
   - SnapKit (~> 3.0.2)
+  - SwiftyTimer
 
 SPEC CHECKSUMS:
   Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
   Kingfisher: 007f5851c18c81e7cc106c9cbac1bafea1cce5dc
   SnapKit: 2e456761aa92d4d4067a7a5594c18769d451a8ad
+  SwiftyTimer: 2efd74b060d69ad4f1496baf5bbedbe132125fcf
 
-PODFILE CHECKSUM: 7b4c11997988483bc1a8b7d156e1af9bcce54175
+PODFILE CHECKSUM: a9562ddc4d65b77815fe08c559320bb52741c3d2
 
 COCOAPODS: 1.1.1
