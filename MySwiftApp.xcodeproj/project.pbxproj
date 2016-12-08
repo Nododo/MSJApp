@@ -26,6 +26,7 @@
 		1FE442311DE2F47E0034D30A /* MSJRecommendFirstSectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FE4422F1DE2F47E0034D30A /* MSJRecommendFirstSectionCell.xib */; };
 		3983C2101DF84014009868D3 /* MSJRecommendCommonHeaderReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3983C20E1DF84014009868D3 /* MSJRecommendCommonHeaderReusableView.swift */; };
 		3983C2111DF84014009868D3 /* MSJRecommendCommonHeaderReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3983C20F1DF84014009868D3 /* MSJRecommendCommonHeaderReusableView.xib */; };
+		39DF307B1DF96A4E0085CDCB /* MSJCycleAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DF307A1DF96A4E0085CDCB /* MSJCycleAdView.swift */; };
 		F1F5EF5336F2641EC9C182E0 /* Pods_MySwiftApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 641353B39579F5A3BE066CAF /* Pods_MySwiftApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +52,7 @@
 		1FE4422F1DE2F47E0034D30A /* MSJRecommendFirstSectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MSJRecommendFirstSectionCell.xib; sourceTree = "<group>"; };
 		3983C20E1DF84014009868D3 /* MSJRecommendCommonHeaderReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSJRecommendCommonHeaderReusableView.swift; sourceTree = "<group>"; };
 		3983C20F1DF84014009868D3 /* MSJRecommendCommonHeaderReusableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MSJRecommendCommonHeaderReusableView.xib; sourceTree = "<group>"; };
+		39DF307A1DF96A4E0085CDCB /* MSJCycleAdView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSJCycleAdView.swift; sourceTree = "<group>"; };
 		4AE2F3C11080BA689AA760C6 /* Pods-MySwiftApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySwiftApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-MySwiftApp/Pods-MySwiftApp.release.xcconfig"; sourceTree = "<group>"; };
 		641353B39579F5A3BE066CAF /* Pods_MySwiftApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MySwiftApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD00FC7B896548CA61AC1021 /* Pods-MySwiftApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySwiftApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MySwiftApp/Pods-MySwiftApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 				1F8161211DB2690800275B19 /* Extention */,
 				1F6DF5001DB0C59F006C885E /* Base */,
 				1F6DF4FF1DB0C544006C885E /* Other */,
+				39DF30751DF968E40085CDCB /* Tool */,
 			);
 			path = MySwiftApp;
 			sourceTree = "<group>";
@@ -151,6 +154,14 @@
 				1F81613E1DB289AD00275B19 /* UIColor+Extention.swift */,
 			);
 			path = Extention;
+			sourceTree = "<group>";
+		};
+		39DF30751DF968E40085CDCB /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				39DF307A1DF96A4E0085CDCB /* MSJCycleAdView.swift */,
+			);
+			path = Tool;
 			sourceTree = "<group>";
 		};
 		6503440B761C0850A6C163B9 /* Frameworks */ = {
@@ -300,6 +311,7 @@
 				1F81611A1DB2618E00275B19 /* MSJRecommendCommonReusableView.swift in Sources */,
 				1F4EB8451DDD60D300A1B329 /* CHTCollectionViewWaterfallLayout.swift in Sources */,
 				1F8161351DB2813700275B19 /* MSJRecommendTopList.swift in Sources */,
+				39DF307B1DF96A4E0085CDCB /* MSJCycleAdView.swift in Sources */,
 				1F81610E1DB22BA900275B19 /* MSJRecommendViewController.swift in Sources */,
 				3983C2101DF84014009868D3 /* MSJRecommendCommonHeaderReusableView.swift in Sources */,
 				1F8161181DB2617600275B19 /* MSJRecommendTopReusableView.swift in Sources */,
