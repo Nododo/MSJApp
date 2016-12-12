@@ -9,6 +9,7 @@ pod 'Alamofire', '~> 4.0'
 pod 'Kingfisher', '~> 3.0'
 pod 'SnapKit', '~> 3.0.2'
 pod 'SwiftyTimer'
+pod 'SwifterSwift'
 
 end
 
