@@ -8,19 +8,20 @@
 
 import UIKit
 import SwiftyTimer
+import Kingfisher
+
 
 class MSJCycleAdView: UIView, UICollectionViewDelegate, UICollectionViewDataSource {
     
     var collectionView: UICollectionView!
-    var pictures: [String]!
-    var pictureNames: [String]?
+    var imageModels: [MSJCycleAdImageModel]!
     
     var pageControl: UIPageControl!
     var nameLabel: UILabel!
-    var timer: Timer!
+    var timer: Timer?
     
-    public init(frame: CGRect, pictures: [String]!) {
-        self.pictures = pictures
+    public init(frame: CGRect, imageModels: [MSJCycleAdImageModel]!) {
+        self.imageModels = imageModels
         super.init(frame: frame)
         setupSubviews()
         setupTimer()
@@ -41,7 +42,7 @@ class MSJCycleAdView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
         addSubview(collectionView)
         
         pageControl = UIPageControl()
-        pageControl.numberOfPages = self.pictures.count
+        pageControl.numberOfPages = self.imageModels.count
         addSubview(pageControl)
         
         nameLabel = UILabel()
@@ -49,13 +50,19 @@ class MSJCycleAdView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func setupTimer() {
-        timer = Timer.every(0.3, { 
+        timer = Timer.new(every: 0.3, { 
             self.scrollToNext()
         })
+        timer?.start(runLoop: .current, modes: .commonModes)
+    }
+    
+    func invalidateTimer() {
+        timer?.invalidate()
+        timer = nil
     }
     
     func scrollToNext()  {
-        //为collectionview 添加extention 或者protocol  scroll to next index
+        collectionView.scrollToNext()
     }
     
     override func layoutSubviews() {
@@ -78,7 +85,7 @@ class MSJCycleAdView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.pictures.count
+        return self.imageModels.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -91,3 +98,51 @@ class MSJCycleAdView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
     }
 }
 
+class MSJCycleAdCell: UICollectionViewCell {
+    var imageView: UIImageView!
+    var imageModel: MSJCycleAdImageModel = MSJCycleAdImageModel() {
+        didSet(newValue) {
+            let url = URL(string: newValue.imageName)
+            imageView.kf.setImage(with: url, placeholder: UIImage(named: newValue.placeholder), options: nil, progressBlock: nil, completionHandler: nil)
+        }
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        imageView = UIImageView()
+        addSubview(imageView)
+    }
+    
+    override func layoutSubviews() {
+         super.layoutSubviews()
+        imageView.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
+        }
+    }
+    
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+struct MSJCycleAdImageModel {
+   var imageName: String = ""
+   var title: String?
+   var placeholder: String = ""
+}
+
+extension UICollectionView {
+    public func scrollToNext() {
+        let width = self.bounds.width
+        let offsetX = self.contentOffset.x
+        let offsetItem = Int(offsetX / width)
+        let nextItem = offsetItem + 1
+        let items = self.numberOfItems(inSection: 0)
+        if nextItem >= items {
+            return
+        }
+        let nextIndexPath = IndexPath(item: nextItem, section: 0)
+        self.scrollToItem(at: nextIndexPath, at: .right, animated: true)
+    }
+}
