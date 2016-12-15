@@ -10,6 +10,7 @@ import UIKit
 import SwiftyTimer
 import Kingfisher
 
+let MSJCycleAdCellIdentifier = "MSJCycleAdCellIdentifier"
 
 class MSJCycleAdView: UIView, UICollectionViewDelegate, UICollectionViewDataSource {
     
@@ -23,7 +24,7 @@ class MSJCycleAdView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
     public init(frame: CGRect, imageModels: [MSJCycleAdImageModel]!) {
         self.imageModels = imageModels
         super.init(frame: frame)
-        setupSubviews()
+        setupSubviews(frame:  frame)
         setupTimer()
     }
     
@@ -31,26 +32,35 @@ class MSJCycleAdView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setupSubviews() {
+    func setupSubviews(frame: CGRect) {
+        
+        
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = self.bounds.size
+        layout.itemSize = frame.size
         layout.minimumInteritemSpacing = 0
         layout.minimumLineSpacing = 0
+        layout.itemSize = frame.size
+        layout.scrollDirection = .horizontal
         collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
+        collectionView.backgroundColor = .cyan
+        collectionView.register(MSJCycleAdCell.self, forCellWithReuseIdentifier: MSJCycleAdCellIdentifier)
+        
         collectionView.delegate = self
         collectionView.dataSource = self
         addSubview(collectionView)
         
         pageControl = UIPageControl()
+        pageControl.backgroundColor = UIColor.randomColor()
         pageControl.numberOfPages = self.imageModels.count
         addSubview(pageControl)
         
         nameLabel = UILabel()
+        nameLabel.backgroundColor = .red
         addSubview(nameLabel)
     }
     
     func setupTimer() {
-        timer = Timer.new(every: 0.3, { 
+        timer = Timer.new(every: 2, {
             self.scrollToNext()
         })
         timer?.start(runLoop: .current, modes: .commonModes)
@@ -67,6 +77,7 @@ class MSJCycleAdView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        
         collectionView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
         }
@@ -89,34 +100,39 @@ class MSJCycleAdView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return UICollectionViewCell()
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MSJCycleAdCellIdentifier, for: indexPath) as! MSJCycleAdCell
+        cell.setImageModel(model: self.imageModels[indexPath.row])
+        cell.backgroundColor = UIColor.randomColor()
+        return cell
     }
     
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        let currentIndex = Int (scrollView.contentOffset.x / collectionView.bounds.width)
-        pageControl.currentPage = currentIndex
+    func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+//        let currentIndex = Int (scrollView.contentOffset.x / collectionView.bounds.width)
+        pageControl.currentPage = indexPath.item
     }
+    
 }
 
 class MSJCycleAdCell: UICollectionViewCell {
     var imageView: UIImageView!
-    var imageModel: MSJCycleAdImageModel = MSJCycleAdImageModel() {
-        didSet(newValue) {
-            let url = URL(string: newValue.imageName)
-            imageView.kf.setImage(with: url, placeholder: UIImage(named: newValue.placeholder), options: nil, progressBlock: nil, completionHandler: nil)
-        }
+    var imageModel: MSJCycleAdImageModel?
+    public func setImageModel(model: MSJCycleAdImageModel) {
+            imageModel = model
+            let url = URL(string: imageModel!.imageName)
+            imageView.kf.setImage(with: url, placeholder: UIImage(named: imageModel!.placeholder))
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         imageView = UIImageView()
+        backgroundColor = UIColor.randomColor()
         addSubview(imageView)
     }
     
     override func layoutSubviews() {
          super.layoutSubviews()
         imageView.snp.makeConstraints { (make) in
-            make.edges.equalToSuperview()
+            make.edges.equalToSuperview().offset(5)
         }
     }
     
@@ -127,9 +143,9 @@ class MSJCycleAdCell: UICollectionViewCell {
 }
 
 struct MSJCycleAdImageModel {
-   var imageName: String = ""
+   var imageName: String
    var title: String?
-   var placeholder: String = ""
+   var placeholder: String
 }
 
 extension UICollectionView {

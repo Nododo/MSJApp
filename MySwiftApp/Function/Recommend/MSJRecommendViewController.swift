@@ -12,6 +12,7 @@ let testIdentifier = "testIdentifier"
 let testHeaderIdentifier = "testHeaderIdentifier"
 let MSJRecommendFirstSectionCellIdentifier = "MSJRecommendFirstSectionCellIdentifier"
 let MSJRecommendCommonHeaderReusableViewIdentifier = "MSJRecommendCommonHeaderReusableViewIdentifier"
+let MSJRecommendAdCellIdentifier = "MSJRecommendAdCellIdentifier"
 
 class MSJRecommendViewController: MSJBaseViewController, CHTCollectionViewDelegateWaterfallLayout, UICollectionViewDataSource {
 
@@ -30,6 +31,7 @@ class MSJRecommendViewController: MSJBaseViewController, CHTCollectionViewDelega
         mainView.register(UINib.init(nibName: "MSJRecommendFirstSectionCell", bundle: nil), forCellWithReuseIdentifier: MSJRecommendFirstSectionCellIdentifier)
         mainView.register(MSJRecommendTopReusableView.self, forSupplementaryViewOfKind: CHTCollectionElementKindSectionHeader, withReuseIdentifier: testHeaderIdentifier)
         mainView.register(UINib.init(nibName: "MSJRecommendCommonHeaderReusableView", bundle: nil), forSupplementaryViewOfKind: CHTCollectionElementKindSectionHeader, withReuseIdentifier: MSJRecommendCommonHeaderReusableViewIdentifier)
+        mainView.register(MSJRecommendAdCell.self, forCellWithReuseIdentifier: MSJRecommendAdCellIdentifier)
     }
     
     override func didReceiveMemoryWarning() {
@@ -105,6 +107,10 @@ class MSJRecommendViewController: MSJBaseViewController, CHTCollectionViewDelega
         case 0:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MSJRecommendFirstSectionCellIdentifier, for: indexPath)
 //            cell.backgroundColor = UIColor.randomColor()
+            return cell
+        case 1:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MSJRecommendAdCellIdentifier, for: indexPath)
+            //            cell.backgroundColor = UIColor.randomColor()
             return cell
         default:
             
