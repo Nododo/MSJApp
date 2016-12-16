@@ -10,6 +10,14 @@ import UIKit
 import SwiftyTimer
 import Kingfisher
 
+
+enum MSJCycleAdViewAlignment {
+    case left
+    case center
+    case right
+}
+
+
 let MSJCycleAdCellIdentifier = "MSJCycleAdCellIdentifier"
 
 class MSJCycleAdView: UIView, UICollectionViewDelegate, UICollectionViewDataSource {
@@ -20,7 +28,7 @@ class MSJCycleAdView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
     var pageControl: UIPageControl!
     var nameLabel: UILabel!
     var timer: Timer?
-    
+    var clickIndexBlock: ((_ index: Int) -> Void)?
     public init(frame: CGRect, imageModels: [MSJCycleAdImageModel]!) {
         self.imageModels = imageModels
         super.init(frame: frame)
@@ -34,7 +42,6 @@ class MSJCycleAdView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
     
     func setupSubviews(frame: CGRect) {
         
-        
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = frame.size
         layout.minimumInteritemSpacing = 0
@@ -42,20 +49,24 @@ class MSJCycleAdView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
         layout.itemSize = frame.size
         layout.scrollDirection = .horizontal
         collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
-        collectionView.backgroundColor = .cyan
+        collectionView.backgroundColor = .white
         collectionView.register(MSJCycleAdCell.self, forCellWithReuseIdentifier: MSJCycleAdCellIdentifier)
-        
+        collectionView.isPagingEnabled = true
         collectionView.delegate = self
         collectionView.dataSource = self
+        collectionView.showsHorizontalScrollIndicator = false
+        collectionView.showsVerticalScrollIndicator = false
         addSubview(collectionView)
         
         pageControl = UIPageControl()
-        pageControl.backgroundColor = UIColor.randomColor()
+        pageControl.pageIndicatorTintColor = .blue
+        pageControl.currentPageIndicatorTintColor = .red
         pageControl.numberOfPages = self.imageModels.count
         addSubview(pageControl)
         
         nameLabel = UILabel()
-        nameLabel.backgroundColor = .red
+        nameLabel.backgroundColor = UIColor(white: 0.5, alpha: 0.5)
+        nameLabel.textAlignment = .center
         addSubview(nameLabel)
     }
     
@@ -106,11 +117,39 @@ class MSJCycleAdView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-//        let currentIndex = Int (scrollView.contentOffset.x / collectionView.bounds.width)
-        pageControl.currentPage = indexPath.item
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        pageControl.currentPage = indexPath.row
+        let model = self.imageModels[indexPath.row]
+        nameLabel.text = model.title
     }
     
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        invalidateTimer()
+    }
+    
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        setupTimer()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let newBlock = clickIndexBlock {
+            newBlock(indexPath.row)
+        }
+    }
+    
+    //MARK: public methods to change the UI
+    public func setNameAlignment(alignment: MSJCycleAdViewAlignment) {
+        switch alignment {
+        case .center:
+            nameLabel.textAlignment = .center;
+        case .left:
+            nameLabel.textAlignment = .left;
+        case .right:
+            nameLabel.textAlignment = .right;
+        }
+    }
+    
+    //todo 添加pageControl位置枚举    添加点击事件代理
 }
 
 class MSJCycleAdCell: UICollectionViewCell {
@@ -125,7 +164,6 @@ class MSJCycleAdCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         imageView = UIImageView()
-        backgroundColor = UIColor.randomColor()
         addSubview(imageView)
     }
     
@@ -156,6 +194,8 @@ extension UICollectionView {
         let nextItem = offsetItem + 1
         let items = self.numberOfItems(inSection: 0)
         if nextItem >= items {
+            let originIndexPath = IndexPath(item: 0, section: 0)
+            self.scrollToItem(at: originIndexPath, at: .right, animated: false)
             return
         }
         let nextIndexPath = IndexPath(item: nextItem, section: 0)

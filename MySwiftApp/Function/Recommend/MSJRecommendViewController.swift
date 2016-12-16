@@ -48,6 +48,8 @@ class MSJRecommendViewController: MSJBaseViewController, CHTCollectionViewDelega
         switch indexPath.section {
         case 0:
             return CGSize(width: screenW, height: 200)
+        case 1:
+            return CGSize(width: screenW, height: 200)
         default:
             return CGSize(width: 100, height: 100)
         }
@@ -97,6 +99,8 @@ class MSJRecommendViewController: MSJBaseViewController, CHTCollectionViewDelega
         switch section {
         case 0:
             return 1
+        case 1:
+            return 1
         default:
             return 1
         }
@@ -106,14 +110,11 @@ class MSJRecommendViewController: MSJBaseViewController, CHTCollectionViewDelega
         switch indexPath.section {
         case 0:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MSJRecommendFirstSectionCellIdentifier, for: indexPath)
-//            cell.backgroundColor = UIColor.randomColor()
             return cell
         case 1:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MSJRecommendAdCellIdentifier, for: indexPath)
-            //            cell.backgroundColor = UIColor.randomColor()
             return cell
         default:
-            
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: testIdentifier, for: indexPath)
             cell.backgroundColor = UIColor.randomColor()
             return cell

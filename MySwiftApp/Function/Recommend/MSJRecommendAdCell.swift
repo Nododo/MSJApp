@@ -14,9 +14,11 @@ class MSJRecommendAdCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        let models = [MSJCycleAdImageModel(imageName: "1", title: nil, placeholder: "2"), MSJCycleAdImageModel(imageName: "1", title: nil, placeholder: "2")]
+        let models = [MSJCycleAdImageModel(imageName: "1", title: "1", placeholder: "2"), MSJCycleAdImageModel(imageName: "1", title: "2", placeholder: "2"), MSJCycleAdImageModel(imageName: "1", title: "3", placeholder: "2"), MSJCycleAdImageModel(imageName: "1", title: nil, placeholder: "2")]
         adView = MSJCycleAdView(frame: frame, imageModels:models)
-        adView.backgroundColor = UIColor.randomColor()
+        adView.clickIndexBlock = {index in
+            print(index)
+        }
         contentView.addSubview(adView)
     }
     
