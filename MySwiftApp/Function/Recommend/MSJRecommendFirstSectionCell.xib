@@ -140,7 +140,7 @@
                 <outlet property="btn5" destination="hbd-1Z-fmr" id="7z8-oj-dOD"/>
                 <outlet property="btn6" destination="7e0-lJ-Ga1" id="79e-wG-rj1"/>
             </connections>
-            <point key="canvasLocation" x="259.5" y="21"/>
+            <point key="canvasLocation" x="80" y="10"/>
         </collectionViewCell>
     </objects>
 </document>
