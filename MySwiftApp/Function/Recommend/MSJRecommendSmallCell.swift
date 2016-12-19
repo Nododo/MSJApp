@@ -13,6 +13,7 @@ class MSJRecommendSmallCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        // test git 
     }
 
 }
