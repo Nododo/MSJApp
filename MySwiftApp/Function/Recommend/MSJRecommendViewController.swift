@@ -14,6 +14,7 @@ let MSJRecommendFirstSectionCellIdentifier = "MSJRecommendFirstSectionCellIdenti
 let MSJRecommendCommonHeaderReusableViewIdentifier = "MSJRecommendCommonHeaderReusableViewIdentifier"
 let MSJRecommendAdCellIdentifier = "MSJRecommendAdCellIdentifier"
 let MSJRecommendSmallCellIdentifier = "MSJRecommendSmallCellIdentifier"
+let MSJRecommendBigCellIdentifier = "MSJRecommendBigCellIdentifier"
 
 class MSJRecommendViewController: MSJBaseViewController, CHTCollectionViewDelegateWaterfallLayout, UICollectionViewDataSource {
 
@@ -34,6 +35,8 @@ class MSJRecommendViewController: MSJBaseViewController, CHTCollectionViewDelega
         mainView.register(UINib.init(nibName: "MSJRecommendCommonHeaderReusableView", bundle: nil), forSupplementaryViewOfKind: CHTCollectionElementKindSectionHeader, withReuseIdentifier: MSJRecommendCommonHeaderReusableViewIdentifier)
         mainView.register(MSJRecommendAdCell.self, forCellWithReuseIdentifier: MSJRecommendAdCellIdentifier)
         mainView.register(UINib.init(nibName: "MSJRecommendSmallCell", bundle: nil), forCellWithReuseIdentifier: MSJRecommendSmallCellIdentifier)
+        mainView.register(UINib.init(nibName: "MSJRecommendBigCell", bundle: nil), forCellWithReuseIdentifier: MSJRecommendBigCellIdentifier)
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -42,7 +45,7 @@ class MSJRecommendViewController: MSJBaseViewController, CHTCollectionViewDelega
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 3
+        return 4
     }
     
     func collectionView (_ collectionView: UICollectionView,layout collectionViewLayout: UICollectionViewLayout,
@@ -51,9 +54,11 @@ class MSJRecommendViewController: MSJBaseViewController, CHTCollectionViewDelega
         case 0:
             return CGSize(width: screenW, height: 200)
         case 1:
-                 return CGSize(width: screenW, height: 200)
+            return CGSize(width: screenW, height: 200)
         case 2:
             return CGSize(width: screenW / 2, height: screenW / 2 + 60)
+        case 3:
+            return CGSize(width: screenW, height: 200)
         default:
             return CGSize(width: 100, height: 100)
         }
@@ -66,6 +71,8 @@ class MSJRecommendViewController: MSJBaseViewController, CHTCollectionViewDelega
         case 0:
             return sntViewH + 40
         case 1:
+            return 40
+        case 3:
             return 40
         default:
             return 0
@@ -83,9 +90,14 @@ class MSJRecommendViewController: MSJBaseViewController, CHTCollectionViewDelega
         return UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
     }
     
-     func collectionView (_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
-                          minimumInteritemSpacingForSectionAtIndex section: NSInteger) -> CGFloat {
-        return 0
+    func collectionView (_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
+                         minimumInteritemSpacingForSectionAtIndex section: Int) -> CGFloat{
+        switch section {
+        case 3:
+            return 5
+        default:
+            return 0
+        }
     }
     
      func collectionView (_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
@@ -97,6 +109,8 @@ class MSJRecommendViewController: MSJBaseViewController, CHTCollectionViewDelega
             return 1
         case 2:
             return 2
+        case 3:
+            return 1
         default:
             return 1
         }
@@ -110,6 +124,8 @@ class MSJRecommendViewController: MSJBaseViewController, CHTCollectionViewDelega
         case 1:
             return 1
         case 2:
+            return 4
+        case 3:
             return 4
         default:
             return 1
@@ -128,6 +144,10 @@ class MSJRecommendViewController: MSJBaseViewController, CHTCollectionViewDelega
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MSJRecommendSmallCellIdentifier, for: indexPath)
             //cell.backgroundColor = UIColor.randomColor()
             return cell
+        case 3:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MSJRecommendBigCellIdentifier, for: indexPath)
+            cell.backgroundColor = UIColor.randomColor()
+            return cell
         default:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: testIdentifier, for: indexPath)
             cell.backgroundColor = UIColor.randomColor()
@@ -143,6 +163,9 @@ class MSJRecommendViewController: MSJBaseViewController, CHTCollectionViewDelega
                 header.backgroundColor = UIColor.white
                 return header
             case 1:
+                let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: MSJRecommendCommonHeaderReusableViewIdentifier, for: indexPath);
+                return header
+            case 3:
                 let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: MSJRecommendCommonHeaderReusableViewIdentifier, for: indexPath);
                 return header
             default:
