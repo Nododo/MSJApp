@@ -20,6 +20,8 @@ class MSJRecommendViewController: MSJBaseViewController, CHTCollectionViewDelega
 
     @IBOutlet weak var mainView: UICollectionView!
     
+    var scrollIndicator: UIButton!
+    
     override func viewDidLoad() {
         //MARK: self.automaticallyAdjustsScrollViewInsets在storyboard中设置为NO
         super.viewDidLoad()
@@ -29,7 +31,6 @@ class MSJRecommendViewController: MSJBaseViewController, CHTCollectionViewDelega
         mainView.collectionViewLayout = layout
         
         mainView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: testIdentifier)
-
         mainView.register(UINib.init(nibName: "MSJRecommendFirstSectionCell", bundle: nil), forCellWithReuseIdentifier: MSJRecommendFirstSectionCellIdentifier)
         mainView.register(MSJRecommendTopReusableView.self, forSupplementaryViewOfKind: CHTCollectionElementKindSectionHeader, withReuseIdentifier: testHeaderIdentifier)
         mainView.register(UINib.init(nibName: "MSJRecommendCommonHeaderReusableView", bundle: nil), forSupplementaryViewOfKind: CHTCollectionElementKindSectionHeader, withReuseIdentifier: MSJRecommendCommonHeaderReusableViewIdentifier)
@@ -37,11 +38,20 @@ class MSJRecommendViewController: MSJBaseViewController, CHTCollectionViewDelega
         mainView.register(UINib.init(nibName: "MSJRecommendSmallCell", bundle: nil), forCellWithReuseIdentifier: MSJRecommendSmallCellIdentifier)
         mainView.register(UINib.init(nibName: "MSJRecommendBigCell", bundle: nil), forCellWithReuseIdentifier: MSJRecommendBigCellIdentifier)
         
+        scrollIndicator = UIButton()
+        self.view.addSubview(scrollIndicator)
+        scrollIndicator.addTarget(self, action: #selector(scrollToTop(_:)), for: .touchUpInside)
+        scrollIndicator.backgroundColor = UIColor.randomColor()
+        scrollIndicator.isHidden = true
+        scrollIndicator.snp.makeConstraints { (make) in
+            make.right.equalTo(-20)
+            make.bottom.equalTo(-74)
+            make.size.equalTo(CGSize(width: 50, height: 50))
+        }
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -188,5 +198,17 @@ class MSJRecommendViewController: MSJBaseViewController, CHTCollectionViewDelega
             }
         }
         return UICollectionReusableView()
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView.contentOffset.y > 50 {
+            scrollIndicator.isHidden = false
+        } else {
+            scrollIndicator.isHidden = true
+        }
+    }
+    
+    func scrollToTop(_ btn: UIButton)  {
+        mainView.scrollToTop()
     }
 }

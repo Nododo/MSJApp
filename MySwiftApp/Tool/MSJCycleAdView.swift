@@ -201,4 +201,10 @@ extension UICollectionView {
         let nextIndexPath = IndexPath(item: nextItem, section: 0)
         self.scrollToItem(at: nextIndexPath, at: .right, animated: true)
     }
+    
+    public func scrollToTop() {
+        self.setContentOffset(CGPoint.zero, animated: true)
+    }
 }
+
+
