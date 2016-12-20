@@ -45,7 +45,7 @@ class MSJRecommendViewController: MSJBaseViewController, CHTCollectionViewDelega
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 4
+        return 5
     }
     
     func collectionView (_ collectionView: UICollectionView,layout collectionViewLayout: UICollectionViewLayout,
@@ -59,6 +59,8 @@ class MSJRecommendViewController: MSJBaseViewController, CHTCollectionViewDelega
             return CGSize(width: screenW / 2, height: screenW / 2 + 60)
         case 3:
             return CGSize(width: screenW, height: 200)
+        case 4:
+            return CGSize(width: screenW / 2, height: screenW / 2 + 60)
         default:
             return CGSize(width: 100, height: 100)
         }
@@ -73,6 +75,8 @@ class MSJRecommendViewController: MSJBaseViewController, CHTCollectionViewDelega
         case 1:
             return 40
         case 3:
+            return 40
+        case 4:
             return 40
         default:
             return 0
@@ -111,6 +115,8 @@ class MSJRecommendViewController: MSJBaseViewController, CHTCollectionViewDelega
             return 2
         case 3:
             return 1
+        case 4:
+            return 2
         default:
             return 1
         }
@@ -127,6 +133,8 @@ class MSJRecommendViewController: MSJBaseViewController, CHTCollectionViewDelega
             return 4
         case 3:
             return 4
+        case 4:
+            return 10
         default:
             return 1
         }
@@ -148,6 +156,10 @@ class MSJRecommendViewController: MSJBaseViewController, CHTCollectionViewDelega
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MSJRecommendBigCellIdentifier, for: indexPath)
             cell.backgroundColor = UIColor.randomColor()
             return cell
+        case 4:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MSJRecommendSmallCellIdentifier, for: indexPath)
+            //cell.backgroundColor = UIColor.randomColor()
+            return cell
         default:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: testIdentifier, for: indexPath)
             cell.backgroundColor = UIColor.randomColor()
@@ -166,6 +178,9 @@ class MSJRecommendViewController: MSJBaseViewController, CHTCollectionViewDelega
                 let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: MSJRecommendCommonHeaderReusableViewIdentifier, for: indexPath);
                 return header
             case 3:
+                let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: MSJRecommendCommonHeaderReusableViewIdentifier, for: indexPath);
+                return header
+            case 4:
                 let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: MSJRecommendCommonHeaderReusableViewIdentifier, for: indexPath);
                 return header
             default:
