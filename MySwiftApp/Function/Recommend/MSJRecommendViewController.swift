@@ -43,6 +43,10 @@ class MSJRecommendViewController: MSJBaseViewController, CHTCollectionViewDelega
         scrollIndicator.addTarget(self, action: #selector(scrollToTop(_:)), for: .touchUpInside)
         scrollIndicator.backgroundColor = UIColor.randomColor()
         scrollIndicator.isHidden = true
+        scrollIndicator.layer.cornerRadius = 25
+        scrollIndicator.layer.masksToBounds = true
+        scrollIndicator.layer.shouldRasterize = true
+        scrollIndicator.layer.rasterizationScale = UIScreen.main.scale
         scrollIndicator.snp.makeConstraints { (make) in
             make.right.equalTo(-20)
             make.bottom.equalTo(-74)

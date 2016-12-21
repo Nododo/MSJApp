@@ -207,4 +207,13 @@ extension UICollectionView {
     }
 }
 
-
+//MARK: 设置约束后调 调用下面的方法设置圆角也没用
+extension UIView {
+    public func msj_setCornerRadius(cornerRadius: CGFloat) {
+        let maskPath = UIBezierPath(roundedRect: self.bounds, cornerRadius: cornerRadius)
+        let maskLayer = CAShapeLayer()
+        maskLayer.frame = self.bounds
+        maskLayer.path = maskPath.cgPath
+        self.layer.mask = maskLayer
+    }
+}
