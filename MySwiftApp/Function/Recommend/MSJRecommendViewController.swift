@@ -17,7 +17,7 @@ let MSJRecommendSmallCellIdentifier = "MSJRecommendSmallCellIdentifier"
 let MSJRecommendBigCellIdentifier = "MSJRecommendBigCellIdentifier"
 
 class MSJRecommendViewController: MSJBaseViewController, CHTCollectionViewDelegateWaterfallLayout, UICollectionViewDataSource {
-
+    
     @IBOutlet weak var mainView: UICollectionView!
     
     var scrollIndicator: UIButton!
@@ -38,6 +38,25 @@ class MSJRecommendViewController: MSJBaseViewController, CHTCollectionViewDelega
         mainView.register(UINib.init(nibName: "MSJRecommendSmallCell", bundle: nil), forCellWithReuseIdentifier: MSJRecommendSmallCellIdentifier)
         mainView.register(UINib.init(nibName: "MSJRecommendBigCell", bundle: nil), forCellWithReuseIdentifier: MSJRecommendBigCellIdentifier)
         
+        setupIndicator()
+        
+        loadData()
+    }
+    
+    func loadData() {
+        let para = ["source" : "iphone",
+                    "format" : "json",
+                    "page" : "1",
+                    "app_liketime" : "1482393036"
+        ]
+        MSJNetManager.shareManager.POST(urlString: "http://api.meishi.cc/v5/index5.php", parameters: para, success: { (result) in
+            
+        }) { (error) in
+            
+        }
+    }
+    
+    func setupIndicator() {
         scrollIndicator = UIButton()
         self.view.addSubview(scrollIndicator)
         scrollIndicator.addTarget(self, action: #selector(scrollToTop(_:)), for: .touchUpInside)
@@ -52,6 +71,7 @@ class MSJRecommendViewController: MSJBaseViewController, CHTCollectionViewDelega
             make.bottom.equalTo(-74)
             make.size.equalTo(CGSize(width: 50, height: 50))
         }
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -81,8 +101,8 @@ class MSJRecommendViewController: MSJBaseViewController, CHTCollectionViewDelega
         
     }
     
-     func collectionView (_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
-                          heightForHeaderInSection section: NSInteger) -> CGFloat {
+    func collectionView (_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
+                         heightForHeaderInSection section: NSInteger) -> CGFloat {
         switch section {
         case 0:
             return sntViewH + 40
@@ -103,8 +123,8 @@ class MSJRecommendViewController: MSJBaseViewController, CHTCollectionViewDelega
         return 0
     }
     
-     func collectionView (_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
-                          insetForSectionAtIndex section: NSInteger) -> UIEdgeInsets {
+    func collectionView (_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
+                         insetForSectionAtIndex section: NSInteger) -> UIEdgeInsets {
         return UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
     }
     
@@ -118,8 +138,8 @@ class MSJRecommendViewController: MSJBaseViewController, CHTCollectionViewDelega
         }
     }
     
-     func collectionView (_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
-                          columnCountForSection section: NSInteger) -> NSInteger {
+    func collectionView (_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
+                         columnCountForSection section: NSInteger) -> NSInteger {
         switch section {
         case 0:
             return 1
@@ -198,7 +218,7 @@ class MSJRecommendViewController: MSJBaseViewController, CHTCollectionViewDelega
                 let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: MSJRecommendCommonHeaderReusableViewIdentifier, for: indexPath);
                 return header
             default:
-                 return UICollectionReusableView()
+                return UICollectionReusableView()
             }
         }
         return UICollectionReusableView()
