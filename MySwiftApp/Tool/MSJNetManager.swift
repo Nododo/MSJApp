@@ -20,7 +20,7 @@ class MSJNetManager: NSObject {
     
     lazy var tasks: [URLSessionTask] = [URLSessionTask]()
     
-    public func GET(urlString: String, parameters: [String : String]? = nil, success: MSJNetSuccess?, error: MSJNetError?) {
+    public func GET(urlString: String, parameters: Parameters?, success: MSJNetSuccess?, error: MSJNetError?) {
         Alamofire.request(urlString, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: nil).responseJSON { (response) in
             switch response.result {
             case .success(let value):
@@ -35,7 +35,7 @@ class MSJNetManager: NSObject {
         }
     }
     
-    public func POST(urlString: String, parameters: [String : String]? = nil, success: MSJNetSuccess?, error: MSJNetError?) {
+    public func POST(urlString: String, parameters: Parameters?, success: MSJNetSuccess?, error: MSJNetError?) {
         Alamofire.request(urlString, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: nil).responseJSON { (response) in
             switch response.result {
             case .success(let value):
