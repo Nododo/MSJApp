@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="yaF-mN-aHI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="yaF-mN-aHI">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -59,7 +62,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Lek-nb-Kap">
-                                <frame key="frameInset" minX="16" minY="64" width="343" height="554"/>
+                                <rect key="frame" x="16" y="64" width="343" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Dsw-No-sif">
                                     <size key="itemSize" width="50" height="50"/>
@@ -87,14 +90,25 @@
                             <constraint firstItem="Lek-nb-Kap" firstAttribute="top" secondItem="WTD-Vf-aX9" secondAttribute="bottom" id="jtY-Gg-zaf"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="3Qu-sR-xxK"/>
+                    <navigationItem key="navigationItem" id="3Qu-sR-xxK">
+                        <nil key="title"/>
+                        <barButtonItem key="leftBarButtonItem" image="index_icon_photo" id="9eM-Fl-lAm"/>
+                        <textField key="titleView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="9SJ-0e-CiQ">
+                            <rect key="frame" x="67" y="7" width="241" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <barButtonItem key="rightBarButtonItem" image="ms_mail2" id="ARw-CY-Cpp"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="mainView" destination="Lek-nb-Kap" id="GxP-SC-0ax"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FYS-Xe-onH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="470" y="-1211"/>
+            <point key="canvasLocation" x="469.60000000000002" y="-1211.2443778110946"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="iyL-HT-8Be">
@@ -249,4 +263,8 @@
             <point key="canvasLocation" x="-2748" y="-582"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="index_icon_photo" width="34" height="44"/>
+        <image name="ms_mail2" width="34" height="44"/>
+    </resources>
 </document>
