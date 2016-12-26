@@ -20,6 +20,8 @@ class MSJRecommendViewController: MSJBaseViewController, CHTCollectionViewDelega
     
     @IBOutlet weak var mainView: UICollectionView!
     
+    @IBOutlet weak var searchField: MSJSearchField!
+    
     var scrollIndicator: UIButton!
     
     override func viewDidLoad() {
@@ -38,6 +40,7 @@ class MSJRecommendViewController: MSJBaseViewController, CHTCollectionViewDelega
         mainView.register(UINib.init(nibName: "MSJRecommendSmallCell", bundle: nil), forCellWithReuseIdentifier: MSJRecommendSmallCellIdentifier)
         mainView.register(UINib.init(nibName: "MSJRecommendBigCell", bundle: nil), forCellWithReuseIdentifier: MSJRecommendBigCellIdentifier)
         
+        setupSearchField()
         setupIndicator()
         
         loadData()
@@ -72,6 +75,18 @@ class MSJRecommendViewController: MSJBaseViewController, CHTCollectionViewDelega
             make.size.equalTo(CGSize(width: 50, height: 50))
         }
         
+    }
+    
+    func setupSearchField() {
+        let searchLeftView = UIImageView(image: UIImage(named: "search_topbar"))
+        searchLeftView.frame = CGRect(x: 0, y: 0, width: 37, height: 30)
+        searchField.leftViewMode = .always
+        searchField.leftView = searchLeftView
+        searchField.snp.makeConstraints { (make) in
+            make.left.equalTo(50)
+            make.right.equalTo(-50)
+            make.top.equalTo(7)
+        }
     }
     
     override func didReceiveMemoryWarning() {
