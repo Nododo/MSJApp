@@ -16,7 +16,7 @@ let MSJRecommendAdCellIdentifier = "MSJRecommendAdCellIdentifier"
 let MSJRecommendSmallCellIdentifier = "MSJRecommendSmallCellIdentifier"
 let MSJRecommendBigCellIdentifier = "MSJRecommendBigCellIdentifier"
 
-class MSJRecommendViewController: MSJBaseViewController, CHTCollectionViewDelegateWaterfallLayout, UICollectionViewDataSource {
+class MSJRecommendViewController: MSJBaseViewController, CHTCollectionViewDelegateWaterfallLayout, UICollectionViewDataSource, UITextFieldDelegate {
     
     @IBOutlet weak var mainView: UICollectionView!
     
@@ -63,7 +63,7 @@ class MSJRecommendViewController: MSJBaseViewController, CHTCollectionViewDelega
         scrollIndicator = UIButton()
         self.view.addSubview(scrollIndicator)
         scrollIndicator.addTarget(self, action: #selector(scrollToTop(_:)), for: .touchUpInside)
-        scrollIndicator.backgroundColor = UIColor.randomColor()
+        scrollIndicator.setImage(UIImage(named: "topbtn"), for: .normal)
         scrollIndicator.isHidden = true
         scrollIndicator.layer.cornerRadius = 25
         scrollIndicator.layer.masksToBounds = true
@@ -87,6 +87,10 @@ class MSJRecommendViewController: MSJBaseViewController, CHTCollectionViewDelega
             make.right.equalTo(-50)
             make.top.equalTo(7)
         }
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        print("跳入搜索界面")
     }
     
     override func didReceiveMemoryWarning() {

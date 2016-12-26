@@ -107,6 +107,9 @@
                             <color key="textColor" red="0.58431372549019611" green="0.58431372549019611" blue="0.58431372549019611" alpha="1" colorSpace="calibratedRGB"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="fb5-Wl-N54" id="lKM-Ho-OVt"/>
+                            </connections>
                         </textField>
                         <barButtonItem key="rightBarButtonItem" image="ms_mail2" style="plain" id="ARw-CY-Cpp">
                             <color key="tintColor" red="0.43529411764705883" green="0.43529411764705883" blue="0.44313725490196076" alpha="1" colorSpace="calibratedRGB"/>
