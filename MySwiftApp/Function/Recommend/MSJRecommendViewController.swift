@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ObjectMapper
 
 let testIdentifier = "testIdentifier"
 let testHeaderIdentifier = "testHeaderIdentifier"
@@ -16,7 +17,10 @@ let MSJRecommendAdCellIdentifier = "MSJRecommendAdCellIdentifier"
 let MSJRecommendSmallCellIdentifier = "MSJRecommendSmallCellIdentifier"
 let MSJRecommendBigCellIdentifier = "MSJRecommendBigCellIdentifier"
 
+
 class MSJRecommendViewController: MSJBaseViewController, CHTCollectionViewDelegateWaterfallLayout, UICollectionViewDataSource, UITextFieldDelegate {
+    
+    lazy var topSanArray = [TopSan]()
     
     @IBOutlet weak var mainView: UICollectionView!
     
@@ -53,7 +57,15 @@ class MSJRecommendViewController: MSJBaseViewController, CHTCollectionViewDelega
                     "app_liketime" : "1482393036"
         ]
         MSJNetManager.shareManager.POST(urlString: "http://api.meishi.cc/v5/index5.php", parameters: para, success: { (result) in
-            
+            let rootDic = result as! JsonDic
+            let dataDic = rootDic["obj"] as! JsonDic
+            let topSans = dataDic["san_can"] as! [JsonDic]
+            for i in 0...2 {
+                let topSanJson = topSans[i]
+                let map = Map.init(mappingType: .fromJSON, JSON: topSanJson)
+                let topSan = TopSan.init(map: map)
+                self.topSanArray.append(topSan!)
+            }
         }) { (error) in
             
         }
@@ -224,7 +236,8 @@ class MSJRecommendViewController: MSJBaseViewController, CHTCollectionViewDelega
         if kind == CHTCollectionElementKindSectionHeader {
             switch indexPath.section {
             case 0:
-                let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: testHeaderIdentifier, for: indexPath);
+                let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: testHeaderIdentifier, for: indexPath) as! MSJRecommendTopReusableView
+                
                 header.backgroundColor = UIColor.white
                 return header
             case 1:

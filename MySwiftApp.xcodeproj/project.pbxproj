@@ -33,6 +33,7 @@
 		39EC46F61E0D425400FDC491 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39EC46F51E0D425400FDC491 /* Assets.xcassets */; };
 		39EC46F81E0D427800FDC491 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39EC46F71E0D427800FDC491 /* AppDelegate.swift */; };
 		39EC46FA1E0D427E00FDC491 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 39EC46F91E0D427E00FDC491 /* Info.plist */; };
+		39F476701E139C08000A4DC2 /* RecommendModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F4766F1E139C08000A4DC2 /* RecommendModel.swift */; };
 		9D3A8B641E064C0F005E4062 /* MSJRecommendSmallCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3A8B621E064C0F005E4062 /* MSJRecommendSmallCell.swift */; };
 		9D3A8B651E064C0F005E4062 /* MSJRecommendSmallCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D3A8B631E064C0F005E4062 /* MSJRecommendSmallCell.xib */; };
 		F1F5EF5336F2641EC9C182E0 /* Pods_MySwiftApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 641353B39579F5A3BE066CAF /* Pods_MySwiftApp.framework */; };
@@ -66,6 +67,7 @@
 		39EC46F51E0D425400FDC491 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = MySwiftApp/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		39EC46F71E0D427800FDC491 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = MySwiftApp/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
 		39EC46F91E0D427E00FDC491 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = MySwiftApp/Info.plist; sourceTree = SOURCE_ROOT; };
+		39F4766F1E139C08000A4DC2 /* RecommendModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendModel.swift; sourceTree = "<group>"; };
 		4AE2F3C11080BA689AA760C6 /* Pods-MySwiftApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySwiftApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-MySwiftApp/Pods-MySwiftApp.release.xcconfig"; sourceTree = "<group>"; };
 		641353B39579F5A3BE066CAF /* Pods_MySwiftApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MySwiftApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D3A8B621E064C0F005E4062 /* MSJRecommendSmallCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSJRecommendSmallCell.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 				39778E471E07EDB4008648E8 /* MSJRecommendBigCell.swift */,
 				39778E481E07EDB4008648E8 /* MSJRecommendBigCell.xib */,
 				39B1A42D1E10F04C002BBE1D /* MSJSearchField.swift */,
+				39F4766F1E139C08000A4DC2 /* RecommendModel.swift */,
 			);
 			path = Recommend;
 			sourceTree = "<group>";
@@ -344,6 +347,7 @@
 				39778E491E07EDB4008648E8 /* MSJRecommendBigCell.swift in Sources */,
 				1F81610E1DB22BA900275B19 /* MSJRecommendViewController.swift in Sources */,
 				394721811E0AA78D006DBE76 /* MSJNetManager.swift in Sources */,
+				39F476701E139C08000A4DC2 /* RecommendModel.swift in Sources */,
 				3983C2101DF84014009868D3 /* MSJRecommendCommonHeaderReusableView.swift in Sources */,
 				1F8161181DB2617600275B19 /* MSJRecommendTopReusableView.swift in Sources */,
 				1F8161331DB2809700275B19 /* MSJRecommendTopCell.swift in Sources */,

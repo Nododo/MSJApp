@@ -11,6 +11,11 @@ import UIKit
 class MSJRecommendTopReusableView: UICollectionReusableView, UICollectionViewDelegate, UICollectionViewDataSource {
     var collectionView: UICollectionView!
     var pageControl: UIPageControl!
+    var topSans: [TopSan]? {
+        didSet {
+            
+        }
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
