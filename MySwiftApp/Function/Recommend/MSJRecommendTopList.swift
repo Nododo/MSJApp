@@ -10,6 +10,13 @@ import UIKit
 
 class MSJRecommendTopList: UITableView, UITableViewDelegate, UITableViewDataSource {
     
+    var mySans: [TopSan]? {
+        didSet {
+            
+        }
+    }
+
+    
     let identifier: String = "MSJRecommendTopListCellIdentifier"
     
     open func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

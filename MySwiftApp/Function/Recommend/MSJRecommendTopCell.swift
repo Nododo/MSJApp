@@ -14,6 +14,12 @@ class MSJRecommendTopCell: UICollectionViewCell {
     var titleLabel: UILabel!
     var subTitleLabel: UILabel!
     var topList: MSJRecommendTopList!
+    var threeSans: [TopSan]? {
+        didSet {
+            
+        }
+    }
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)

@@ -60,7 +60,7 @@ class MSJRecommendViewController: MSJBaseViewController, CHTCollectionViewDelega
             let rootDic = result as! JsonDic
             let dataDic = rootDic["obj"] as! JsonDic
             let topSans = dataDic["san_can"] as! [JsonDic]
-            for i in 0...2 {
+            for i in 0..<topSans.count {
                 let topSanJson = topSans[i]
                 let map = Map.init(mappingType: .fromJSON, JSON: topSanJson)
                 let topSan = TopSan.init(map: map)
