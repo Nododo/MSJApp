@@ -12,7 +12,7 @@ class MSJRecommendTopList: UITableView, UITableViewDelegate, UITableViewDataSour
     
     var mySans: [TopSan]? {
         didSet {
-            
+            reloadData()
         }
     }
 
@@ -32,7 +32,6 @@ class MSJRecommendTopList: UITableView, UITableViewDelegate, UITableViewDataSour
     }
     open func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! MSJRecommendTopListCell
-        cell.backgroundColor = UIColor.randomColor()
         return cell
     }
     

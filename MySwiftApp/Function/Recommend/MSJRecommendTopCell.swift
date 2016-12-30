@@ -16,7 +16,7 @@ class MSJRecommendTopCell: UICollectionViewCell {
     var topList: MSJRecommendTopList!
     var threeSans: [TopSan]? {
         didSet {
-            
+            topList.mySans = threeSans
         }
     }
     

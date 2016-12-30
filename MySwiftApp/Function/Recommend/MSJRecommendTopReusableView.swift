@@ -13,7 +13,7 @@ class MSJRecommendTopReusableView: UICollectionReusableView, UICollectionViewDel
     var pageControl: UIPageControl!
     var topSans: [TopSan]? {
         didSet {
-            
+            collectionView.reloadData()
         }
     }
     
@@ -42,7 +42,7 @@ class MSJRecommendTopReusableView: UICollectionReusableView, UICollectionViewDel
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MSJRecommendTopCell", for: indexPath) as! MSJRecommendTopCell
-        topSans?[0...2]
+        cell.threeSans = topSans?[indexPath.row...indexPath.row + 2]
         return cell
     }
     
