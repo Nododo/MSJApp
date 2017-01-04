@@ -42,7 +42,6 @@ class MSJRecommendTopReusableView: UICollectionReusableView, UICollectionViewDel
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MSJRecommendTopCell", for: indexPath) as! MSJRecommendTopCell
-        cell.threeSans = topSans?[indexPath.row...indexPath.row + 2]
         return cell
     }
     
