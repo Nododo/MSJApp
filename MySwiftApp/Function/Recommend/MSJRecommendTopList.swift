@@ -32,6 +32,7 @@ class MSJRecommendTopList: UITableView, UITableViewDelegate, UITableViewDataSour
     }
     open func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! MSJRecommendTopListCell
+        cell.san = mySans?[indexPath.section]
         return cell
     }
     
@@ -44,8 +45,7 @@ class MSJRecommendTopList: UITableView, UITableViewDelegate, UITableViewDataSour
         separatorInset = UIEdgeInsetsMake(0, 0, 5, 0)
         delegate = self
         dataSource = self
-        register(MSJRecommendTopListCell.self, forCellReuseIdentifier: identifier)
-        
+        register(UINib.init(nibName: "MSJRecommendTopListCell", bundle: nil), forCellReuseIdentifier: identifier)
     }
     
     

@@ -55,3 +55,34 @@ class TopSan : NSObject, Mappable {
         
     }
 }
+
+class TopSanTitle : NSObject, Mappable{
+    
+    var clickObj : String?
+    var clickTrackingURL : String?
+    var clickType : String?
+    var pvTrackingURL : String?
+    var subTitle : String?
+    var title : String?
+    var titlepic : String?
+    var topSans: [TopSan]?
+
+    required init?(map: Map){
+        super.init()
+        self.mapping(map: map)
+    }
+    private override init(){}
+    
+    func mapping(map: Map)
+    {
+        topSans = [TopSan]()
+        clickObj <- map["click_obj"]
+        clickTrackingURL <- map["click_trackingURL"]
+        clickType <- map["click_type"]
+        pvTrackingURL <- map["pv_trackingURL"]
+        subTitle <- map["sub_title"]
+        title <- map["title"]
+        titlepic <- map["titlepic"]
+        
+    }
+}

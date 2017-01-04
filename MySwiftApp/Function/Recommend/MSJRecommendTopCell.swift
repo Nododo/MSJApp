@@ -14,9 +14,11 @@ class MSJRecommendTopCell: UICollectionViewCell {
     var titleLabel: UILabel!
     var subTitleLabel: UILabel!
     var topList: MSJRecommendTopList!
-    var threeSans: [TopSan]? {
+    var threeSanTitle: TopSanTitle? {
         didSet {
-            topList.mySans = threeSans
+            topList.mySans = threeSanTitle?.topSans
+            titleLabel.text = threeSanTitle?.title
+            subTitleLabel.text = threeSanTitle?.subTitle
         }
     }
     
@@ -31,7 +33,7 @@ class MSJRecommendTopCell: UICollectionViewCell {
         titleLabel.textAlignment = .center
         titleLabel.textColor = topTextColor
         titleLabel.font = UIFont.systemFont(ofSize: 15)
-        titleLabel.text = "下午茶"
+//        titleLabel.text = "下午茶"
         titleLabel.backgroundColor = topColor
         addSubview(titleLabel)
         
@@ -39,7 +41,7 @@ class MSJRecommendTopCell: UICollectionViewCell {
         subTitleLabel.textAlignment = .center
         subTitleLabel.textColor = topTextColor
         subTitleLabel.backgroundColor = topColor
-        subTitleLabel.text = "午后让嘴巴飞去南方度个假"
+//        subTitleLabel.text = "午后让嘴巴飞去南方度个假"
         subTitleLabel.font = UIFont.systemFont(ofSize: 13)
         addSubview(subTitleLabel)
     }

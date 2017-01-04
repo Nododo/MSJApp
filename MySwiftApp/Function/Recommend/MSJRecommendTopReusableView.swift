@@ -11,11 +11,12 @@ import UIKit
 class MSJRecommendTopReusableView: UICollectionReusableView, UICollectionViewDelegate, UICollectionViewDataSource {
     var collectionView: UICollectionView!
     var pageControl: UIPageControl!
-    var topSans: [TopSan]? {
+    var topSanTitles: [TopSanTitle]? {
         didSet {
             collectionView.reloadData()
         }
     }
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -42,6 +43,10 @@ class MSJRecommendTopReusableView: UICollectionReusableView, UICollectionViewDel
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MSJRecommendTopCell", for: indexPath) as! MSJRecommendTopCell
+        if (topSanTitles?.count)! > 0 {
+            
+            cell.threeSanTitle = topSanTitles?[indexPath.item]
+        }
         return cell
     }
     

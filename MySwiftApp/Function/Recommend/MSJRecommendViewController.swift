@@ -20,7 +20,7 @@ let MSJRecommendBigCellIdentifier = "MSJRecommendBigCellIdentifier"
 
 class MSJRecommendViewController: MSJBaseViewController, CHTCollectionViewDelegateWaterfallLayout, UICollectionViewDataSource, UITextFieldDelegate {
     
-    lazy var topSanArray = [TopSan]()
+    lazy var topSanTitles = [TopSanTitle]()
     
     @IBOutlet weak var mainView: UICollectionView!
     
@@ -60,12 +60,24 @@ class MSJRecommendViewController: MSJBaseViewController, CHTCollectionViewDelega
             let rootDic = result as! JsonDic
             let dataDic = rootDic["obj"] as! JsonDic
             let topSans = dataDic["san_can"] as! [JsonDic]
+            let topSanTitles = dataDic["san_can_titles"] as! [JsonDic]
+            var topSanArray = [TopSan]()
             for i in 0..<topSans.count {
                 let topSanJson = topSans[i]
                 let map = Map.init(mappingType: .fromJSON, JSON: topSanJson)
                 let topSan = TopSan.init(map: map)
-                self.topSanArray.append(topSan!)
+                topSanArray.append(topSan!)
             }
+            
+            for i in 0..<topSanTitles.count {
+                let topSanTitleJson = topSanTitles[i]
+                let map = Map.init(mappingType: .fromJSON, JSON: topSanTitleJson)
+                let topSanTitle = TopSanTitle.init(map: map)
+                topSanTitle?.topSans?.appendItems(from: topSanArray.items(from: i...i+2)!)
+                self.topSanTitles.append(topSanTitle!)
+            }
+            
+            self.mainView.reloadData()
         }) { (error) in
             
         }
@@ -237,6 +249,7 @@ class MSJRecommendViewController: MSJBaseViewController, CHTCollectionViewDelega
             switch indexPath.section {
             case 0:
                 let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: testHeaderIdentifier, for: indexPath) as! MSJRecommendTopReusableView
+                header.topSanTitles = self.topSanTitles
                 
                 header.backgroundColor = UIColor.white
                 return header
