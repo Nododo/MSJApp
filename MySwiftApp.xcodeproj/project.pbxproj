@@ -23,6 +23,7 @@
 		1FE442311DE2F47E0034D30A /* MSJRecommendFirstSectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FE4422F1DE2F47E0034D30A /* MSJRecommendFirstSectionCell.xib */; };
 		390CBEE81E1BAD9400956A25 /* Collection+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390CBEE71E1BAD9400956A25 /* Collection+Extention.swift */; };
 		394721811E0AA78D006DBE76 /* MSJNetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394721801E0AA78D006DBE76 /* MSJNetManager.swift */; };
+		394809B51E1E1BE3009F60E9 /* MSJEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394809B41E1E1BE3009F60E9 /* MSJEnum.swift */; };
 		39778E491E07EDB4008648E8 /* MSJRecommendBigCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39778E471E07EDB4008648E8 /* MSJRecommendBigCell.swift */; };
 		39778E4A1E07EDB4008648E8 /* MSJRecommendBigCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39778E481E07EDB4008648E8 /* MSJRecommendBigCell.xib */; };
 		3983C2101DF84014009868D3 /* MSJRecommendCommonHeaderReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3983C20E1DF84014009868D3 /* MSJRecommendCommonHeaderReusableView.swift */; };
@@ -58,6 +59,7 @@
 		1FE4422F1DE2F47E0034D30A /* MSJRecommendFirstSectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MSJRecommendFirstSectionCell.xib; sourceTree = "<group>"; };
 		390CBEE71E1BAD9400956A25 /* Collection+Extention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Collection+Extention.swift"; sourceTree = "<group>"; };
 		394721801E0AA78D006DBE76 /* MSJNetManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSJNetManager.swift; sourceTree = "<group>"; };
+		394809B41E1E1BE3009F60E9 /* MSJEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSJEnum.swift; sourceTree = "<group>"; };
 		39778E471E07EDB4008648E8 /* MSJRecommendBigCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSJRecommendBigCell.swift; sourceTree = "<group>"; };
 		39778E481E07EDB4008648E8 /* MSJRecommendBigCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MSJRecommendBigCell.xib; sourceTree = "<group>"; };
 		3983C20E1DF84014009868D3 /* MSJRecommendCommonHeaderReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSJRecommendCommonHeaderReusableView.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				1F6DF5021DB0C613006C885E /* MSJBaseViewController.swift */,
+				394809B41E1E1BE3009F60E9 /* MSJEnum.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -345,6 +348,7 @@
 				39B1A42E1E10F04C002BBE1D /* MSJSearchField.swift in Sources */,
 				398FA3C81E0260D9002DC320 /* MSJRecommendAdCell.swift in Sources */,
 				390CBEE81E1BAD9400956A25 /* Collection+Extention.swift in Sources */,
+				394809B51E1E1BE3009F60E9 /* MSJEnum.swift in Sources */,
 				9D3A8B641E064C0F005E4062 /* MSJRecommendSmallCell.swift in Sources */,
 				1F8161351DB2813700275B19 /* MSJRecommendTopList.swift in Sources */,
 				39DF307B1DF96A4E0085CDCB /* MSJCycleAdView.swift in Sources */,

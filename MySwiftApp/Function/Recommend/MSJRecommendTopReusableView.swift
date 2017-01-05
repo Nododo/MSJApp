@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwifterSwift
 
 class MSJRecommendTopReusableView: UICollectionReusableView, UICollectionViewDelegate, UICollectionViewDataSource {
     var collectionView: UICollectionView!
@@ -14,6 +15,9 @@ class MSJRecommendTopReusableView: UICollectionReusableView, UICollectionViewDel
     var topSanTitles: [TopSanTitle]? {
         didSet {
             collectionView.reloadData()
+            guard (topSanTitles?.count)! > 0 else { return }
+            let currentPath = IndexPath(item: MealType.configNowMeal().rawValue, section: 0)
+            collectionView.scrollToItem(at: currentPath, at: .left, animated: false)
         }
     }
     

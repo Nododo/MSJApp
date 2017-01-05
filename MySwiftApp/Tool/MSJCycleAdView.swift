@@ -186,8 +186,8 @@ struct MSJCycleAdImageModel {
    var placeholder: String
 }
 
-extension UICollectionView {
-    public func scrollToNext() {
+public extension UICollectionView {
+     func scrollToNext() {
         let width = self.bounds.width
         let offsetX = self.contentOffset.x
         let offsetItem = Int(offsetX / width)
@@ -202,7 +202,7 @@ extension UICollectionView {
         self.scrollToItem(at: nextIndexPath, at: .right, animated: true)
     }
     
-    public func scrollToTop() {
+     func scrollToTop() {
         self.setContentOffset(CGPoint.zero, animated: true)
     }
 }
