@@ -38,15 +38,12 @@ class MSJRecommendTopReusableView: UICollectionReusableView, UICollectionViewDel
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return (topSanTitles?.count)!
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MSJRecommendTopCell", for: indexPath) as! MSJRecommendTopCell
-        if (topSanTitles?.count)! > 0 {
-            
-            cell.threeSanTitle = topSanTitles?[indexPath.item]
-        }
+        cell.threeSanTitle = topSanTitles?[indexPath.item]
         return cell
     }
     

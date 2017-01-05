@@ -12,6 +12,17 @@ class MSJRecommendTopListCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var contentLabel: UILabel!
     @IBOutlet weak var picView: UIImageView!
+    var textIsLeft: Bool! {
+        didSet {
+            if textIsLeft == true {
+                nameLabel.textAlignment = .left
+                contentLabel.textAlignment = .left
+            } else {
+                nameLabel.textAlignment = .right
+                contentLabel.textAlignment = .right
+            }
+        }
+    }
     
     var san: TopSan? {
         didSet {

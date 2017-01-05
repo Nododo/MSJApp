@@ -73,7 +73,7 @@ class MSJRecommendViewController: MSJBaseViewController, CHTCollectionViewDelega
                 let topSanTitleJson = topSanTitles[i]
                 let map = Map.init(mappingType: .fromJSON, JSON: topSanTitleJson)
                 let topSanTitle = TopSanTitle.init(map: map)
-                topSanTitle?.topSans?.appendItems(from: topSanArray.items(from: i...i+2)!)
+                topSanTitle?.topSans?.appendItems(from: topSanArray.items(from: i * 3...i * 3+2)!)
                 self.topSanTitles.append(topSanTitle!)
             }
             
