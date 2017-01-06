@@ -35,3 +35,9 @@ public enum MealType: Int {
         }
     }
 }
+
+
+public enum HudTpye {
+    case gif(name: String)
+    case label(text: String)
+}

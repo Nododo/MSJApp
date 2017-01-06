@@ -24,6 +24,7 @@
 		390CBEE81E1BAD9400956A25 /* Collection+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390CBEE71E1BAD9400956A25 /* Collection+Extention.swift */; };
 		394721811E0AA78D006DBE76 /* MSJNetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394721801E0AA78D006DBE76 /* MSJNetManager.swift */; };
 		394809B51E1E1BE3009F60E9 /* MSJEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394809B41E1E1BE3009F60E9 /* MSJEnum.swift */; };
+		394809BD1E1E4E05009F60E9 /* refreshpotgif@2x.gif in Resources */ = {isa = PBXBuildFile; fileRef = 394809BC1E1E4E05009F60E9 /* refreshpotgif@2x.gif */; };
 		39778E491E07EDB4008648E8 /* MSJRecommendBigCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39778E471E07EDB4008648E8 /* MSJRecommendBigCell.swift */; };
 		39778E4A1E07EDB4008648E8 /* MSJRecommendBigCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39778E481E07EDB4008648E8 /* MSJRecommendBigCell.xib */; };
 		3983C2101DF84014009868D3 /* MSJRecommendCommonHeaderReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3983C20E1DF84014009868D3 /* MSJRecommendCommonHeaderReusableView.swift */; };
@@ -31,6 +32,7 @@
 		398FA3C81E0260D9002DC320 /* MSJRecommendAdCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398FA3C71E0260D9002DC320 /* MSJRecommendAdCell.swift */; };
 		39AE47291E10F840008A1B69 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39AE47271E10F840008A1B69 /* LaunchScreen.storyboard */; };
 		39B1A42E1E10F04C002BBE1D /* MSJSearchField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B1A42D1E10F04C002BBE1D /* MSJSearchField.swift */; };
+		39CBC1A31E1FA5F0004516A5 /* MSJHud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CBC1A21E1FA5F0004516A5 /* MSJHud.swift */; };
 		39DF307B1DF96A4E0085CDCB /* MSJCycleAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DF307A1DF96A4E0085CDCB /* MSJCycleAdView.swift */; };
 		39EC46F61E0D425400FDC491 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39EC46F51E0D425400FDC491 /* Assets.xcassets */; };
 		39EC46F81E0D427800FDC491 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39EC46F71E0D427800FDC491 /* AppDelegate.swift */; };
@@ -60,6 +62,7 @@
 		390CBEE71E1BAD9400956A25 /* Collection+Extention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Collection+Extention.swift"; sourceTree = "<group>"; };
 		394721801E0AA78D006DBE76 /* MSJNetManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSJNetManager.swift; sourceTree = "<group>"; };
 		394809B41E1E1BE3009F60E9 /* MSJEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSJEnum.swift; sourceTree = "<group>"; };
+		394809BC1E1E4E05009F60E9 /* refreshpotgif@2x.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "refreshpotgif@2x.gif"; sourceTree = "<group>"; };
 		39778E471E07EDB4008648E8 /* MSJRecommendBigCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSJRecommendBigCell.swift; sourceTree = "<group>"; };
 		39778E481E07EDB4008648E8 /* MSJRecommendBigCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MSJRecommendBigCell.xib; sourceTree = "<group>"; };
 		3983C20E1DF84014009868D3 /* MSJRecommendCommonHeaderReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSJRecommendCommonHeaderReusableView.swift; sourceTree = "<group>"; };
@@ -67,6 +70,7 @@
 		398FA3C71E0260D9002DC320 /* MSJRecommendAdCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSJRecommendAdCell.swift; sourceTree = "<group>"; };
 		39AE47281E10F840008A1B69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = MySwiftApp/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
 		39B1A42D1E10F04C002BBE1D /* MSJSearchField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSJSearchField.swift; sourceTree = "<group>"; };
+		39CBC1A21E1FA5F0004516A5 /* MSJHud.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSJHud.swift; sourceTree = "<group>"; };
 		39DF307A1DF96A4E0085CDCB /* MSJCycleAdView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSJCycleAdView.swift; sourceTree = "<group>"; };
 		39EC46F51E0D425400FDC491 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = MySwiftApp/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		39EC46F71E0D427800FDC491 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = MySwiftApp/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
@@ -191,6 +195,8 @@
 			children = (
 				39DF307A1DF96A4E0085CDCB /* MSJCycleAdView.swift */,
 				394721801E0AA78D006DBE76 /* MSJNetManager.swift */,
+				39CBC1A21E1FA5F0004516A5 /* MSJHud.swift */,
+				394809BC1E1E4E05009F60E9 /* refreshpotgif@2x.gif */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -284,6 +290,7 @@
 				9D3A8B651E064C0F005E4062 /* MSJRecommendSmallCell.xib in Resources */,
 				39778E4A1E07EDB4008648E8 /* MSJRecommendBigCell.xib in Resources */,
 				39EC46F61E0D425400FDC491 /* Assets.xcassets in Resources */,
+				394809BD1E1E4E05009F60E9 /* refreshpotgif@2x.gif in Resources */,
 				1F7290D31DB0BFDE00EF2E8E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -364,6 +371,7 @@
 				1F6DF5031DB0C613006C885E /* MSJBaseViewController.swift in Sources */,
 				1F81613F1DB289AD00275B19 /* UIColor+Extention.swift in Sources */,
 				1F81611C1DB264D200275B19 /* MSJRecommendTopReusableLayout.swift in Sources */,
+				39CBC1A31E1FA5F0004516A5 /* MSJHud.swift in Sources */,
 				1F8161381DB2815200275B19 /* MSJRecommendTopListCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
