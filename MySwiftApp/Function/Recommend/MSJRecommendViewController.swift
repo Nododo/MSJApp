@@ -51,12 +51,14 @@ class MSJRecommendViewController: MSJBaseViewController, CHTCollectionViewDelega
     }
     
     func loadData() {
+        MSJHud.show(type: .gif(name: "refreshpotgif@2x.gif"))
         let para = ["source" : "iphone",
                     "format" : "json",
                     "page" : "1",
                     "app_liketime" : "1482393036"
         ]
         MSJNetManager.shareManager.POST(urlString: "http://api.meishi.cc/v5/index5.php", parameters: para, success: { (result) in
+            MSJHud.hide()
             let rootDic = result as! JsonDic
             let dataDic = rootDic["obj"] as! JsonDic
             let topSans = dataDic["san_can"] as! [JsonDic]

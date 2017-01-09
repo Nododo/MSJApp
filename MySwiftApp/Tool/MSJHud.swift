@@ -32,4 +32,12 @@ class MSJHud: UIView {
             return
         }
     }
+    
+    static func hide() {
+        for subView in (SwifterSwift.keyWindow?.subviews)! {
+            if subView.isKind(of: MSJHud.self) {
+                subView.removeFromSuperview()
+            }
+        }
+    }
 }
