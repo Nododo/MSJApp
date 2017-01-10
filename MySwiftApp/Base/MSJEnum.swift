@@ -38,6 +38,6 @@ public enum MealType: Int {
 
 
 public enum HudTpye {
-    case gif(name: String)
-    case label(text: String)
+    case gif(gifName: String, penetration: Bool)
+    case label(msg: String, penetration: Bool)
 }

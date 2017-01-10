@@ -51,7 +51,7 @@ class MSJRecommendViewController: MSJBaseViewController, CHTCollectionViewDelega
     }
     
     func loadData() {
-        MSJHud.show(type: .gif(name: "refreshpotgif@2x.gif"))
+        MSJHud.show(type: .gif(gifName: "refreshpotgif@2x.gif", penetration: false))
         let para = ["source" : "iphone",
                     "format" : "json",
                     "page" : "1",

@@ -17,10 +17,16 @@ class MSJHud: UIView {
         return gifView
     }()
     
+    lazy var msgLabel: UILabel = {
+        let msgLabel = UILabel()
+        self.addSubview(msgLabel)
+        return msgLabel
+    }()
+    
     static func show(type: HudTpye) -> Void {
+        let hud = MSJHud(frame: UIScreen.main.bounds)
         switch type {
-        case .gif(name: let gifName):
-            let hud = MSJHud(frame: UIScreen.main.bounds)
+        case .gif(let gifName, let penetration):
             hud.gifView.snp.makeConstraints({ (make) in
                 make.center.equalToSuperview()
                 make.height.equalTo(54)
@@ -28,8 +34,14 @@ class MSJHud: UIView {
             })
             SwifterSwift.keyWindow?.addSubview(hud)
             hud.gifView.animate(withGIFNamed: gifName)
-        default:
-            return
+        case .label(let msg, let penetration):
+            hud.msgLabel.snp.makeConstraints({ (make) in
+                make.center.equalToSuperview()
+                make.height.equalTo(54)
+                make.width.equalTo(54)
+            })
+            hud.msgLabel.text = msg
+            SwifterSwift.keyWindow?.addSubview(hud)
         }
     }
     
