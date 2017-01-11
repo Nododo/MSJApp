@@ -10,6 +10,7 @@ import UIKit
 import Gifu
 import SwifterSwift
 
+
 class MSJHud: UIView {
     lazy var gifView: GIFImageView = {
         let gifView = GIFImageView()
@@ -32,8 +33,9 @@ class MSJHud: UIView {
                 make.height.equalTo(54)
                 make.width.equalTo(54)
             })
-            SwifterSwift.keyWindow?.addSubview(hud)
+           UIApplication.shared.keyWindow?.addSubview(hud)
             hud.gifView.animate(withGIFNamed: gifName)
+            UIApplication.shared.keyWindow?.enableRespond(enable: penetration)
         case .label(let msg, let penetration):
             hud.msgLabel.snp.makeConstraints({ (make) in
                 make.center.equalToSuperview()
@@ -41,7 +43,7 @@ class MSJHud: UIView {
                 make.width.equalTo(54)
             })
             hud.msgLabel.text = msg
-            SwifterSwift.keyWindow?.addSubview(hud)
+            UIApplication.shared.keyWindow?.enableRespond(enable: penetration)
         }
     }
     
@@ -51,5 +53,6 @@ class MSJHud: UIView {
                 subView.removeFromSuperview()
             }
         }
+        UIApplication.shared.keyWindow?.enableRespond(enable: true)
     }
 }

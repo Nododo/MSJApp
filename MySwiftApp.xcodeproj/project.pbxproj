@@ -25,6 +25,7 @@
 		394721811E0AA78D006DBE76 /* MSJNetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394721801E0AA78D006DBE76 /* MSJNetManager.swift */; };
 		394809B51E1E1BE3009F60E9 /* MSJEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394809B41E1E1BE3009F60E9 /* MSJEnum.swift */; };
 		394809BD1E1E4E05009F60E9 /* refreshpotgif@2x.gif in Resources */ = {isa = PBXBuildFile; fileRef = 394809BC1E1E4E05009F60E9 /* refreshpotgif@2x.gif */; };
+		3952AD8D1E26518900482985 /* UIView+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3952AD8C1E26518900482985 /* UIView+Extention.swift */; };
 		39778E491E07EDB4008648E8 /* MSJRecommendBigCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39778E471E07EDB4008648E8 /* MSJRecommendBigCell.swift */; };
 		39778E4A1E07EDB4008648E8 /* MSJRecommendBigCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39778E481E07EDB4008648E8 /* MSJRecommendBigCell.xib */; };
 		3983C2101DF84014009868D3 /* MSJRecommendCommonHeaderReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3983C20E1DF84014009868D3 /* MSJRecommendCommonHeaderReusableView.swift */; };
@@ -63,6 +64,7 @@
 		394721801E0AA78D006DBE76 /* MSJNetManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSJNetManager.swift; sourceTree = "<group>"; };
 		394809B41E1E1BE3009F60E9 /* MSJEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSJEnum.swift; sourceTree = "<group>"; };
 		394809BC1E1E4E05009F60E9 /* refreshpotgif@2x.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "refreshpotgif@2x.gif"; sourceTree = "<group>"; };
+		3952AD8C1E26518900482985 /* UIView+Extention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extention.swift"; sourceTree = "<group>"; };
 		39778E471E07EDB4008648E8 /* MSJRecommendBigCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSJRecommendBigCell.swift; sourceTree = "<group>"; };
 		39778E481E07EDB4008648E8 /* MSJRecommendBigCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MSJRecommendBigCell.xib; sourceTree = "<group>"; };
 		3983C20E1DF84014009868D3 /* MSJRecommendCommonHeaderReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSJRecommendCommonHeaderReusableView.swift; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 			children = (
 				1F81613E1DB289AD00275B19 /* UIColor+Extention.swift */,
 				390CBEE71E1BAD9400956A25 /* Collection+Extention.swift */,
+				3952AD8C1E26518900482985 /* UIView+Extention.swift */,
 			);
 			path = Extention;
 			sourceTree = "<group>";
@@ -361,6 +364,7 @@
 				39DF307B1DF96A4E0085CDCB /* MSJCycleAdView.swift in Sources */,
 				39778E491E07EDB4008648E8 /* MSJRecommendBigCell.swift in Sources */,
 				1F81610E1DB22BA900275B19 /* MSJRecommendViewController.swift in Sources */,
+				3952AD8D1E26518900482985 /* UIView+Extention.swift in Sources */,
 				394721811E0AA78D006DBE76 /* MSJNetManager.swift in Sources */,
 				39F476701E139C08000A4DC2 /* RecommendModel.swift in Sources */,
 				3983C2101DF84014009868D3 /* MSJRecommendCommonHeaderReusableView.swift in Sources */,
