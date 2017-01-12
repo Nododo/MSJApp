@@ -33,6 +33,7 @@
 		398FA3C81E0260D9002DC320 /* MSJRecommendAdCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398FA3C71E0260D9002DC320 /* MSJRecommendAdCell.swift */; };
 		39AE47291E10F840008A1B69 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39AE47271E10F840008A1B69 /* LaunchScreen.storyboard */; };
 		39B1A42E1E10F04C002BBE1D /* MSJSearchField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B1A42D1E10F04C002BBE1D /* MSJSearchField.swift */; };
+		39BC88181E27901F00C5265F /* String+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39BC88171E27901F00C5265F /* String+Extention.swift */; };
 		39CBC1A31E1FA5F0004516A5 /* MSJHud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CBC1A21E1FA5F0004516A5 /* MSJHud.swift */; };
 		39DF307B1DF96A4E0085CDCB /* MSJCycleAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DF307A1DF96A4E0085CDCB /* MSJCycleAdView.swift */; };
 		39EC46F61E0D425400FDC491 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39EC46F51E0D425400FDC491 /* Assets.xcassets */; };
@@ -72,6 +73,7 @@
 		398FA3C71E0260D9002DC320 /* MSJRecommendAdCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSJRecommendAdCell.swift; sourceTree = "<group>"; };
 		39AE47281E10F840008A1B69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = MySwiftApp/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
 		39B1A42D1E10F04C002BBE1D /* MSJSearchField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSJSearchField.swift; sourceTree = "<group>"; };
+		39BC88171E27901F00C5265F /* String+Extention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extention.swift"; sourceTree = "<group>"; };
 		39CBC1A21E1FA5F0004516A5 /* MSJHud.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSJHud.swift; sourceTree = "<group>"; };
 		39DF307A1DF96A4E0085CDCB /* MSJCycleAdView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSJCycleAdView.swift; sourceTree = "<group>"; };
 		39EC46F51E0D425400FDC491 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = MySwiftApp/Assets.xcassets; sourceTree = SOURCE_ROOT; };
@@ -189,6 +191,7 @@
 				1F81613E1DB289AD00275B19 /* UIColor+Extention.swift */,
 				390CBEE71E1BAD9400956A25 /* Collection+Extention.swift */,
 				3952AD8C1E26518900482985 /* UIView+Extention.swift */,
+				39BC88171E27901F00C5265F /* String+Extention.swift */,
 			);
 			path = Extention;
 			sourceTree = "<group>";
@@ -366,6 +369,7 @@
 				1F81610E1DB22BA900275B19 /* MSJRecommendViewController.swift in Sources */,
 				3952AD8D1E26518900482985 /* UIView+Extention.swift in Sources */,
 				394721811E0AA78D006DBE76 /* MSJNetManager.swift in Sources */,
+				39BC88181E27901F00C5265F /* String+Extention.swift in Sources */,
 				39F476701E139C08000A4DC2 /* RecommendModel.swift in Sources */,
 				3983C2101DF84014009868D3 /* MSJRecommendCommonHeaderReusableView.swift in Sources */,
 				1F8161181DB2617600275B19 /* MSJRecommendTopReusableView.swift in Sources */,
