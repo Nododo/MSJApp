@@ -66,7 +66,7 @@ class TopSanTitle : NSObject, Mappable{
     var title : String?
     var titlepic : String?
     var topSans: [TopSan]?
-
+    
     required init?(map: Map){
         super.init()
         self.mapping(map: map)
@@ -83,6 +83,62 @@ class TopSanTitle : NSObject, Mappable{
         subTitle <- map["sub_title"]
         title <- map["title"]
         titlepic <- map["titlepic"]
+        
+    }
+}
+
+class FirstCellModel: NSObject {
+    var fenleis: [Fenlei]
+    var fenleiFuncs: [FenleiFunc]
+    
+    override init() {
+        fenleis = [Fenlei]()
+        fenleiFuncs = [FenleiFunc]()
+    }
+}
+
+
+class Fenlei : NSObject, Mappable{
+    
+    var clickObj : String?
+    var clickType : String?
+    var image : String?
+    var jump : String?
+    var title : String?
+    
+    required init?(map: Map){
+        super.init()
+        self.mapping(map: map)
+    }
+    private override init(){}
+    
+    func mapping(map: Map)
+    {
+        clickObj <- map["click_obj"]
+        clickType <- map["click_type"]
+        image <- map["image"]
+        jump <- map["jump"]
+        title <- map["title"]
+        
+    }
+}
+
+
+class FenleiFunc : NSObject, Mappable{
+    
+    var image : String?
+    var title : String?
+    
+    required init?(map: Map){
+        super.init()
+        self.mapping(map: map)
+    }
+    private override init(){}
+    
+    func mapping(map: Map)
+    {
+        image <- map["image"]
+        title <- map["title"]
         
     }
 }

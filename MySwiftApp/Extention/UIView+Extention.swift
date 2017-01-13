@@ -10,12 +10,21 @@ import Foundation
 import UIKit
 import SwifterSwift
 
+public extension UIView {
+    func makeAllSubviewsEnableRespond(enable: Bool) {
+        if self.subviews.count == 0 {
+            return;
+        }
+        for subview in self.subviews {
+            subview.isUserInteractionEnabled = enable;
+            subview.makeAllSubviewsEnableRespond(enable: enable)
+        }
+    }
+}
+
+
 public extension UIWindow {
     func enableRespond(enable: Bool) {
-        if let tempWindow = SwifterSwift.keyWindow {
-            for subView in tempWindow.subviews {
-                subView.isUserInteractionEnabled = enable
-            }
-        }
+        SwifterSwift.keyWindow?.makeAllSubviewsEnableRespond(enable: enable)
     }
 }

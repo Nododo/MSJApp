@@ -21,6 +21,7 @@ let MSJRecommendBigCellIdentifier = "MSJRecommendBigCellIdentifier"
 class MSJRecommendViewController: MSJBaseViewController, CHTCollectionViewDelegateWaterfallLayout, UICollectionViewDataSource, UITextFieldDelegate {
     
     lazy var topSanTitles = [TopSanTitle]()
+    lazy var firstCellModel = FirstCellModel()
     
     @IBOutlet weak var mainView: UICollectionView!
     
@@ -59,11 +60,16 @@ class MSJRecommendViewController: MSJBaseViewController, CHTCollectionViewDelega
                     "app_liketime" : "1482393036"
         ]
         MSJNetManager.shareManager.POST(urlString: "http://api.meishi.cc/v5/index5.php", parameters: para, success: { (result) in
-//            MSJHud.hide()
+            MSJHud.hide()
             let rootDic = result as! JsonDic
             let dataDic = rootDic["obj"] as! JsonDic
             let topSans = dataDic["san_can"] as! [JsonDic]
             let topSanTitles = dataDic["san_can_titles"] as! [JsonDic]
+            let topFenleis = dataDic["fenlei"] as! [JsonDic]
+            let topFenleiFunc1 = dataDic["func1"] as! JsonDic
+            let topFenleiFunc2 = dataDic["func2"] as! JsonDic
+            
+            
             var topSanArray = [TopSan]()
             for i in 0..<topSans.count {
                 let topSanJson = topSans[i]
@@ -79,6 +85,21 @@ class MSJRecommendViewController: MSJBaseViewController, CHTCollectionViewDelega
                 topSanTitle?.topSans?.appendItems(from: topSanArray.items(from: i * 3...i * 3+2)!)
                 self.topSanTitles.append(topSanTitle!)
             }
+            
+            for i in 0..<topFenleis.count {
+                let topFenleiJson = topFenleis[i]
+                let map = Map.init(mappingType: .fromJSON, JSON: topFenleiJson)
+                let topFenlei = Fenlei.init(map: map)
+                self.firstCellModel.fenleis.append(topFenlei!)
+            }
+            
+            let func1Map = Map.init(mappingType: .fromJSON, JSON: topFenleiFunc1)
+            let func1 = FenleiFunc.init(map: func1Map)
+            self.firstCellModel.fenleiFuncs.append(func1!)
+            
+            let func2Map = Map.init(mappingType: .fromJSON, JSON: topFenleiFunc2)
+            let func2 = FenleiFunc.init(map: func2Map)
+            self.firstCellModel.fenleiFuncs.append(func2!)
             
             self.mainView.reloadData()
         }) { (error) in
@@ -223,7 +244,8 @@ class MSJRecommendViewController: MSJBaseViewController, CHTCollectionViewDelega
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         switch indexPath.section {
         case 0:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MSJRecommendFirstSectionCellIdentifier, for: indexPath)
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MSJRecommendFirstSectionCellIdentifier, for: indexPath) as! MSJRecommendFirstSectionCell
+            cell.firstCellModel = self.firstCellModel
             return cell
         case 1:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MSJRecommendAdCellIdentifier, for: indexPath)

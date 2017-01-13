@@ -42,6 +42,7 @@ class MSJHud: UIView {
             UIApplication.shared.keyWindow?.addSubview(hud)
             hud.gifView.animate(withGIFNamed: gifName)
             UIApplication.shared.keyWindow?.enableRespond(enable: penetration)
+            hud.isUserInteractionEnabled = !penetration
         case .label(let msg, let penetration):
             var msgHeight = msg.size(for: labelFont, size: CGSize(width: 200, height: Int.max), breakMode: .byWordWrapping).height
             if msgHeight < 40 {
@@ -54,9 +55,9 @@ class MSJHud: UIView {
                 make.width.equalTo(200)
             })
             hud.msgLabel.text = msg
-            
             UIApplication.shared.keyWindow?.addSubview(hud)
             UIApplication.shared.keyWindow?.enableRespond(enable: penetration)
+            hud.isUserInteractionEnabled = !penetration
         }
     }
     
