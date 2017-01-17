@@ -24,13 +24,12 @@
                             <constraint firstAttribute="height" constant="80" id="1Jf-Ov-w7b"/>
                         </constraints>
                     </button>
-                    <button opaque="NO" tag="101" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cr0-lE-18R">
+                    <button opaque="NO" tag="101" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cr0-lE-18R">
                         <rect key="frame" x="86" y="0.0" width="80" height="80"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="80" id="4mj-Wd-u9h"/>
                             <constraint firstAttribute="width" constant="80" id="LwZ-RY-1g9"/>
                         </constraints>
-                        <state key="normal" title="1"/>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gSU-cV-jr1">
                         <rect key="frame" x="166" y="0.0" width="85.5" height="80"/>
@@ -38,9 +37,8 @@
                             <constraint firstAttribute="height" constant="80" id="tU0-eL-cfT"/>
                         </constraints>
                     </button>
-                    <button opaque="NO" tag="102" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D9z-nR-X0I">
-                        <rect key="frame" x="251" y="0.0" width="80" height="80"/>
-                        <state key="normal" title="2"/>
+                    <button opaque="NO" tag="102" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D9z-nR-X0I">
+                        <rect key="frame" x="251.5" y="0.0" width="80" height="80"/>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JQR-HH-gcB">
                         <rect key="frame" x="331.5" y="0.0" width="86" height="80"/>
@@ -48,9 +46,8 @@
                             <constraint firstAttribute="height" constant="80" id="cBn-o9-0Fa"/>
                         </constraints>
                     </button>
-                    <button opaque="NO" tag="103" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EoT-03-g9Y">
+                    <button opaque="NO" tag="103" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EoT-03-g9Y">
                         <rect key="frame" x="417.5" y="0.0" width="80" height="80"/>
-                        <state key="normal" title="3"/>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tt6-Du-ARj">
                         <rect key="frame" x="497.5" y="0.0" width="85.5" height="80"/>
@@ -58,9 +55,8 @@
                             <constraint firstAttribute="height" constant="80" id="o9M-d2-3XJ"/>
                         </constraints>
                     </button>
-                    <button opaque="NO" tag="104" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TLB-1e-0N6">
+                    <button opaque="NO" tag="104" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TLB-1e-0N6">
                         <rect key="frame" x="583" y="0.0" width="80" height="80"/>
-                        <state key="normal" title="4"/>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dRr-xL-H3y">
                         <rect key="frame" x="663" y="0.0" width="86" height="80"/>
@@ -68,9 +64,8 @@
                             <constraint firstAttribute="height" constant="80" id="Zb8-Di-H7W"/>
                         </constraints>
                     </button>
-                    <button opaque="NO" tag="106" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7e0-lJ-Ga1">
+                    <button opaque="NO" tag="106" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7e0-lJ-Ga1">
                         <rect key="frame" x="399.5" y="100" width="329.5" height="142"/>
-                        <state key="normal" title="image2"/>
                     </button>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nTZ-Pm-4Jm">
                         <rect key="frame" x="369.5" y="80" width="10" height="182"/>
@@ -79,9 +74,8 @@
                             <constraint firstAttribute="width" constant="10" id="dEx-Zf-nBU"/>
                         </constraints>
                     </view>
-                    <button opaque="NO" tag="105" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hbd-1Z-fmr">
+                    <button opaque="NO" tag="105" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hbd-1Z-fmr">
                         <rect key="frame" x="20" y="100" width="329.5" height="142"/>
-                        <state key="normal" title="image1"/>
                     </button>
                 </subviews>
             </view>

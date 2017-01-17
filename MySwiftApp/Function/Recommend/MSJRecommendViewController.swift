@@ -57,9 +57,11 @@ class MSJRecommendViewController: MSJBaseViewController, CHTCollectionViewDelega
         let para = ["source" : "iphone",
                     "format" : "json",
                     "page" : "1",
-                    "app_liketime" : "1482393036"
+                    "app_liketime" : "1484307699",
+                    "lon" : "116.3549552489226",
+                    "lat" : "39.97936774415317"
         ]
-        MSJNetManager.shareManager.POST(urlString: "http://api.meishi.cc/v5/index5.php", parameters: para, success: { (result) in
+        MSJNetManager.shareManager.POST(urlString: "https://api.meishi.cc/v6/index5.php", parameters: para, success: { (result) in
             MSJHud.hide()
             let rootDic = result as! JsonDic
             let dataDic = rootDic["obj"] as! JsonDic

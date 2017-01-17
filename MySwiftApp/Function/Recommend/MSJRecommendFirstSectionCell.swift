@@ -19,8 +19,19 @@ class MSJRecommendFirstSectionCell: UICollectionViewCell {
     
     var firstCellModel: FirstCellModel? {
         didSet {
-            let url1 = URL(string: (firstCellModel?.fenleis[1].image)!)
+            let url1 = URL(string: (firstCellModel?.fenleis[0].image)!)
             btn1.kf.setImage(with: url1, for: .normal, placeholder: nil, options: nil, progressBlock: nil, completionHandler: nil)
+            let url2 = URL(string: (firstCellModel?.fenleis[1].image)!)
+            btn2.kf.setImage(with: url2, for: .normal, placeholder: nil, options: nil, progressBlock: nil, completionHandler: nil)
+            let url3 = URL(string: (firstCellModel?.fenleis[2].image)!)
+            btn3.kf.setImage(with: url3, for: .normal, placeholder: nil, options: nil, progressBlock: nil, completionHandler: nil)
+            let url4 = URL(string: (firstCellModel?.fenleis[3].image)!)
+            btn4.kf.setImage(with: url4, for: .normal, placeholder: nil, options: nil, progressBlock: nil, completionHandler: nil)
+            
+            let url5 = URL(string: (firstCellModel?.fenleiFuncs[0].image)!)
+            btn5.kf.setImage(with: url5, for: .normal, placeholder: nil, options: nil, progressBlock: nil, completionHandler: nil)
+            let url6 = URL(string: (firstCellModel?.fenleiFuncs[1].image)!)
+            btn6.kf.setImage(with: url6, for: .normal, placeholder: nil, options: nil, progressBlock: nil, completionHandler: nil)
         }
         
     }
