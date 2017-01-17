@@ -57,9 +57,9 @@ class MSJRecommendViewController: MSJBaseViewController, CHTCollectionViewDelega
         let para = ["source" : "iphone",
                     "format" : "json",
                     "page" : "1",
-                    "app_liketime" : "1484307699",
-                    "lon" : "116.3549552489226",
-                    "lat" : "39.97936774415317"
+//                    "app_liketime" : "1484307699",
+//                    "lon" : "116.3549552489226",
+//                    "lat" : "39.97936774415317"
         ]
         MSJNetManager.shareManager.POST(urlString: "https://api.meishi.cc/v6/index5.php", parameters: para, success: { (result) in
             MSJHud.hide()
@@ -251,6 +251,7 @@ class MSJRecommendViewController: MSJBaseViewController, CHTCollectionViewDelega
             return cell
         case 1:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MSJRecommendAdCellIdentifier, for: indexPath)
+            //对应接口数据 shop
             return cell
         case 2:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MSJRecommendSmallCellIdentifier, for: indexPath)
