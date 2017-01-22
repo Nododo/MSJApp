@@ -52,7 +52,6 @@ class TopSan : NSObject, Mappable {
         title <- map["title"]
         titlepic <- map["titlepic"]
         tjImg <- map["tj_img"]
-        
     }
 }
 
@@ -71,10 +70,10 @@ class TopSanTitle : NSObject, Mappable{
         super.init()
         self.mapping(map: map)
     }
+    
     private override init(){}
     
-    func mapping(map: Map)
-    {
+    func mapping(map: Map) {
         topSans = [TopSan]()
         clickObj <- map["click_obj"]
         clickTrackingURL <- map["click_trackingURL"]
@@ -83,14 +82,12 @@ class TopSanTitle : NSObject, Mappable{
         subTitle <- map["sub_title"]
         title <- map["title"]
         titlepic <- map["titlepic"]
-        
     }
 }
 
 class FirstCellModel: NSObject {
     var fenleis: [Fenlei]
     var fenleiFuncs: [FenleiFunc]
-    
     override init() {
         fenleis = [Fenlei]()
         fenleiFuncs = [FenleiFunc]()
@@ -139,6 +136,43 @@ class FenleiFunc : NSObject, Mappable{
     {
         image <- map["image"]
         title <- map["title"]
+        
+    }
+}
+
+class RecommendShop : NSObject, Mappable{
+    
+    var aid : String?
+    var clickObj : String?
+    var clickTrackingURL : String?
+    var clickType : Int?
+    var clickUrls : [AnyObject]?
+    var impUrls : [AnyObject]?
+    var isRecipe : String?
+    var jump : String?
+    var photo : String?
+    var pvTrackingURL : String?
+    var sft : String?
+    
+    required init?(map: Map){
+        super.init()
+        self.mapping(map: map)
+    }
+    private override init(){}
+    
+    func mapping(map: Map)
+    {
+        aid <- map["aid"]
+        clickObj <- map["click_obj"]
+        clickTrackingURL <- map["click_trackingURL"]
+        clickType <- map["click_type"]
+        clickUrls <- map["click_urls"]
+        impUrls <- map["imp_urls"]
+        isRecipe <- map["is_recipe"]
+        jump <- map["jump"]
+        photo <- map["photo"]
+        pvTrackingURL <- map["pv_trackingURL"]
+        sft <- map["sft"]
         
     }
 }

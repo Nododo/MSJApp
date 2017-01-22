@@ -54,7 +54,10 @@ class MSJRecommendTopReusableView: UICollectionReusableView, UICollectionViewDel
     override func layoutSubviews() {
         super.layoutSubviews()
         collectionView.snp.makeConstraints { (make) in
-            make.left.right.top.equalTo(0)
+//            make.left.right.top.equalTo(0)
+            make.top.equalTo(0)
+            make.right.equalTo(-5)
+            make.left.equalTo(5)
             make.bottom.equalTo(-40)
         }
         

@@ -22,6 +22,7 @@ class MSJRecommendViewController: MSJBaseViewController, CHTCollectionViewDelega
     
     lazy var topSanTitles = [TopSanTitle]()
     lazy var firstCellModel = FirstCellModel()
+    lazy var shops = [RecommendShop]()
     
     @IBOutlet weak var mainView: UICollectionView!
     
@@ -70,7 +71,7 @@ class MSJRecommendViewController: MSJBaseViewController, CHTCollectionViewDelega
             let topFenleis = dataDic["fenlei"] as! [JsonDic]
             let topFenleiFunc1 = dataDic["func1"] as! JsonDic
             let topFenleiFunc2 = dataDic["func2"] as! JsonDic
-            
+            let shopJsons = dataDic["top3"] as! [JsonDic]
             
             var topSanArray = [TopSan]()
             for i in 0..<topSans.count {
@@ -93,6 +94,13 @@ class MSJRecommendViewController: MSJBaseViewController, CHTCollectionViewDelega
                 let map = Map.init(mappingType: .fromJSON, JSON: topFenleiJson)
                 let topFenlei = Fenlei.init(map: map)
                 self.firstCellModel.fenleis.append(topFenlei!)
+            }
+            
+            for i in 0..<shopJsons.count {
+                let shopJson = shopJsons[i]
+                let map = Map.init(mappingType: .fromJSON, JSON: shopJson)
+                let shop = RecommendShop.init(map: map)
+                self.shops.append(shop!)
             }
             
             let func1Map = Map.init(mappingType: .fromJSON, JSON: topFenleiFunc1)
@@ -225,7 +233,6 @@ class MSJRecommendViewController: MSJBaseViewController, CHTCollectionViewDelega
         }
     }
     
-    
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch section {
         case 0:
@@ -250,7 +257,8 @@ class MSJRecommendViewController: MSJBaseViewController, CHTCollectionViewDelega
             cell.firstCellModel = self.firstCellModel
             return cell
         case 1:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MSJRecommendAdCellIdentifier, for: indexPath)
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MSJRecommendAdCellIdentifier, for: indexPath) as! MSJRecommendAdCell
+            cell.shops = shops
             //对应接口数据 shop
             return cell
         case 2:

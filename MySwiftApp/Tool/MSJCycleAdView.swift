@@ -22,17 +22,24 @@ let MSJCycleAdCellIdentifier = "MSJCycleAdCellIdentifier"
 
 class MSJCycleAdView: UIView, UICollectionViewDelegate, UICollectionViewDataSource {
     
+    var shops: [RecommendShop]? {
+        didSet {
+            pageControl.numberOfPages = (shops?.count)!
+            collectionView.reloadData()
+        }
+    }
+    
     var collectionView: UICollectionView!
-    var imageModels: [MSJCycleAdImageModel]!
+//    var imageModels: [MSJCycleAdImageModel]!
     
     var pageControl: UIPageControl!
     var nameLabel: UILabel!
     var timer: Timer?
     var clickIndexBlock: ((_ index: Int) -> Void)?
-    public init(frame: CGRect, imageModels: [MSJCycleAdImageModel]!) {
-        self.imageModels = imageModels
+    
+    override init(frame: CGRect) {
         super.init(frame: frame)
-        setupSubviews(frame:  frame)
+        setupSubviews(frame: frame)
         setupTimer()
     }
     
@@ -61,7 +68,7 @@ class MSJCycleAdView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
         pageControl = UIPageControl()
         pageControl.pageIndicatorTintColor = .blue
         pageControl.currentPageIndicatorTintColor = .red
-        pageControl.numberOfPages = self.imageModels.count
+//        pageControl.numberOfPages = (self.shops?.count)!
         addSubview(pageControl)
         
         nameLabel = UILabel()
@@ -100,27 +107,24 @@ class MSJCycleAdView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
             make.width.equalTo(50)
         }
         
-        nameLabel.snp.makeConstraints { (make) in
-            make.top.left.right.equalToSuperview()
-            make.height.equalTo(30)
-        }
+//        nameLabel.snp.makeConstraints { (make) in
+//            make.top.left.right.equalToSuperview()
+//            make.height.equalTo(30)
+//        }
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.imageModels.count
+        return shops!.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MSJCycleAdCellIdentifier, for: indexPath) as! MSJCycleAdCell
-        cell.setImageModel(model: self.imageModels[indexPath.row])
-        cell.backgroundColor = UIColor.randomColor()
+        cell.setImageModel(model: (shops?[indexPath.row])!)
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         pageControl.currentPage = indexPath.row
-        let model = self.imageModels[indexPath.row]
-        nameLabel.text = model.title
     }
     
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
@@ -154,11 +158,11 @@ class MSJCycleAdView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
 
 class MSJCycleAdCell: UICollectionViewCell {
     var imageView: UIImageView!
-    var imageModel: MSJCycleAdImageModel?
-    public func setImageModel(model: MSJCycleAdImageModel) {
+    var imageModel: RecommendShop?
+    public func setImageModel(model: RecommendShop) {
             imageModel = model
-            let url = URL(string: imageModel!.imageName)
-            imageView.kf.setImage(with: url, placeholder: UIImage(named: imageModel!.placeholder))
+            let url = URL(string: model.photo!)
+            imageView.kf.setImage(with: url, placeholder: nil)
     }
     
     override init(frame: CGRect) {
@@ -170,7 +174,7 @@ class MSJCycleAdCell: UICollectionViewCell {
     override func layoutSubviews() {
          super.layoutSubviews()
         imageView.snp.makeConstraints { (make) in
-            make.edges.equalToSuperview().offset(5)
+            make.edges.equalToSuperview()
         }
     }
     
@@ -180,11 +184,11 @@ class MSJCycleAdCell: UICollectionViewCell {
     }
 }
 
-struct MSJCycleAdImageModel {
-   var imageName: String
-   var title: String?
-   var placeholder: String
-}
+//struct MSJCycleAdImageModel {
+//   var imageName: String
+//   var title: String?
+//   var placeholder: String
+//}
 
 public extension UICollectionView {
      func scrollToNext() {

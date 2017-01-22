@@ -11,11 +11,14 @@ import UIKit
 
 class MSJRecommendAdCell: UICollectionViewCell {
     var adView: MSJCycleAdView!
-    
+    var shops: [RecommendShop]? {
+        didSet {
+            adView.shops = shops
+        }
+    }
     override init(frame: CGRect) {
         super.init(frame: frame)
-        let models = [MSJCycleAdImageModel(imageName: "1", title: "1", placeholder: "2"), MSJCycleAdImageModel(imageName: "1", title: "2", placeholder: "2"), MSJCycleAdImageModel(imageName: "1", title: "3", placeholder: "2"), MSJCycleAdImageModel(imageName: "1", title: nil, placeholder: "2")]
-        adView = MSJCycleAdView(frame: frame, imageModels:models)
+        adView = MSJCycleAdView(frame: frame)
         adView.clickIndexBlock = {index in
             print(index)
         }
