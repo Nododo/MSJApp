@@ -29,8 +29,14 @@ class MSJCycleAdView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
         }
     }
     
+    var isInfinite: Bool = false {
+        didSet {
+            invalidateTimer()
+            setupTimer()
+        }
+    }
+    
     var collectionView: UICollectionView!
-//    var imageModels: [MSJCycleAdImageModel]!
     
     var pageControl: UIPageControl!
     var nameLabel: UILabel!
@@ -114,17 +120,32 @@ class MSJCycleAdView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if self.isInfinite == true {
+            return 10000
+        }
         return shops!.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MSJCycleAdCellIdentifier, for: indexPath) as! MSJCycleAdCell
-        cell.setImageModel(model: (shops?[indexPath.row])!)
+        var currentRow: Int
+        if self.isInfinite == true {
+            currentRow = indexPath.row % (shops?.count)!
+        } else {
+            currentRow = indexPath.row
+        }
+
+        cell.setImageModel(model: (shops?[currentRow])!)
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        pageControl.currentPage = indexPath.row
+        if self.isInfinite == true {
+            pageControl.currentPage = indexPath.row % (shops?.count)!
+        } else {
+            pageControl.currentPage = indexPath.row
+        }
+
     }
     
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
@@ -137,7 +158,12 @@ class MSJCycleAdView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let newBlock = clickIndexBlock {
-            newBlock(indexPath.row)
+            if self.isInfinite == true {
+                newBlock(indexPath.row % (shops?.count)!)
+            } else {
+                newBlock(indexPath.row)
+            }
+            
         }
     }
     
@@ -184,11 +210,6 @@ class MSJCycleAdCell: UICollectionViewCell {
     }
 }
 
-//struct MSJCycleAdImageModel {
-//   var imageName: String
-//   var title: String?
-//   var placeholder: String
-//}
 
 public extension UICollectionView {
      func scrollToNext() {

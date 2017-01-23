@@ -19,6 +19,7 @@ class MSJRecommendAdCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         adView = MSJCycleAdView(frame: frame)
+        adView.isInfinite = true
         adView.clickIndexBlock = {index in
             print(index)
         }
